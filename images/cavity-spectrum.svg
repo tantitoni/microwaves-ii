@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="200" viewBox="0 0 380 200">
+  <style>
+    text { font-family: "Latin Modern Math", "STIX Two Math", serif; font-size: 13px; }
+    line { stroke: black; stroke-width: 1.5; fill: none; }
+  </style>
+
+  <!-- Axes -->
+  <line x1="40" y1="150" x2="360" y2="150"/>
+  <line x1="40" y1="20"  x2="40"  y2="155"/>
+  <!-- Arrow on omega axis -->
+  <polygon points="360,150 350,145 350,155" fill="black"/>
+  <text x="362" y="154" font-style="italic">ω</text>
+
+  <!-- Spike at ω₁₀₁ -->
+  <line x1="110" y1="150" x2="110" y2="70"/>
+  <polygon points="110,65 105,78 115,78" fill="black"/>
+  <text x="95" y="168" font-style="italic">ω</text>
+  <text x="107" y="173" font-size="10px">101</text>
+
+  <!-- Spike at ω_nmp (1) -->
+  <line x1="190" y1="150" x2="190" y2="90"/>
+  <polygon points="190,85 185,98 195,98" fill="black"/>
+
+  <!-- Spike at ω_nmp (2) -->
+  <line x1="220" y1="150" x2="220" y2="90"/>
+  <polygon points="220,85 215,98 225,98" fill="black"/>
+
+  <!-- Arrow label → ω_nmp -->
+  <line x1="135" y1="162" x2="178" y2="162"/>
+  <polygon points="178,162 168,158 168,166" fill="black"/>
+  <text x="138" y="160" font-style="italic">→ ω</text>
+  <text x="171" y="165" font-size="10px">nmp</text>
+
+  <!-- dots -->
+  <text x="235" y="148" font-size="16px">. . .</text>
+
+  <!-- "lowest one" label with curved arrow -->
+  <text x="130" y="40">lowest one</text>
+  <path d="M148,45 Q130,55 118,68" stroke="black" stroke-width="1.2" fill="none"/>
+  <polygon points="118,68 122,57 128,64" fill="black"/>
+</svg>
