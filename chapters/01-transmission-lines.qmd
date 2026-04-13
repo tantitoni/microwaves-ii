@@ -1,0 +1,28 @@
+# Transmission Lines
+
+## Introduction
+
+A transmission line is a two-conductor structure that guides electromagnetic energy
+from one point to another.
+
+## Telegrapher's Equations
+
+The distributed-parameter model gives:
+
+$$\frac{\partial V}{\partial z} = -\left(R + j\omega L\right) I$$
+
+$$\frac{\partial I}{\partial z} = -\left(G + j\omega C\right) V$$
+
+where $R$, $L$, $G$, $C$ are the per-unit-length parameters.
+
+## Propagation Constant
+
+$$\gamma = \alpha + j\beta = \sqrt{(R + j\omega L)(G + j\omega C)}$$
+
+## Characteristic Impedance
+
+$$Z_0 = \sqrt{\frac{R + j\omega L}{G + j\omega C}}$$
+
+For a lossless line ($R = G = 0$):
+
+$$Z_0 = \sqrt{\frac{L}{C}}$$

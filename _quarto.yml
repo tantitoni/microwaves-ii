@@ -1,0 +1,32 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "EE 428 Microwaves II"
+  author: "tantitoni"
+  date: today
+  chapters:
+    - index.qmd
+    - chapters/01-s-parameters.qmd
+    - chapters/02-coupled-lines.qmd
+    - chapters/03-phase-shifters-hybrids-dividers.qmd
+    - chapters/04-broadband-matching.qmd
+    - chapters/05-quarter-wave-transformers.qmd
+    - chapters/06-tapered-lines.qmd
+    - chapters/07-cavities.qmd
+    - chapters/08-filter-design.qmd
+    - chapters/09-transmission-line-filters.qmd
+    - chapters/10-microwave-devices.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    code-copy: true
+    toc: true
+  pdf:
+    documentclass: scrbook
+    keep-tex: false

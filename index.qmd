@@ -1,0 +1,12 @@
+# Preface {.unnumbered}
+
+These are lecture notes for **EE 428 Microwaves II** at Middle East Technical University, Department of Electrical and Electronics Engineering, 2025–2026 Spring Semester.
+
+**Instructor:**    
+
+**Textbook:** David M. Pozar, *Microwave Engineering*, 4th ed., John Wiley & Sons.
+
+**Supplementary:**
+
+- Robert E. Collin, *Foundations for Microwave Engineering*, McGraw Hill.
+- A. Das and S. K. Das, *Microwave Engineering*, McGraw Hill.

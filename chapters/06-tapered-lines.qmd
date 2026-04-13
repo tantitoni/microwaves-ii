@@ -1,0 +1,13 @@
+# Tapered Transmission Lines
+
+## Exponential Taper
+
+*Add your notes here.*
+
+## Triangular Taper
+
+*Add your notes here.*
+
+## Klopfenstein Taper
+
+*Add your notes here.*
