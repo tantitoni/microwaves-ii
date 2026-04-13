@@ -72,6 +72,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -105,7 +106,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -228,7 +229,7 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -250,53 +251,93 @@ window.Quarto = {
 
 
 <p>In certain cases high field selectivity is required. Various types of resonators can be used for this purpose.</p>
-<section id="series-and-parallel-rlc-resonators" class="level2" data-number="7.1">
+<section id="series-and-parallel-rlc-resonators" class="level2 page-columns page-full" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="series-and-parallel-rlc-resonators"><span class="header-section-number">7.1</span> Series and Parallel RLC Resonators</h2>
 <p>A series RLC resonator has impedance <span class="math inline">\(Z_{in} = R + j\omega L + \frac{1}{j\omega C}\)</span>. <span class="math inline">\(LC\)</span> determines <span class="math inline">\(\omega_0\)</span>, <span class="math inline">\(R\)</span> determines the dissipation factor.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/series-rlc.svg" class="img-fluid figure-img" style="width:20.0%"></p>
-<figcaption>Series RLC resonator. <span class="math inline">\(Z_{in}|_{\omega_0} \in \mathbb{R}\)</span></figcaption>
+<div class="quarto-layout-panel" data-layout="[30,70]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
+<div id="fig-series-rlc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-series-rlc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/series-rlc.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-series-rlc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.1: Series RLC resonator.
+</figcaption>
 </figure>
 </div>
-<p><span class="math display">\[Z_{in} \big|_{\omega_0},\ Z_{in} \in \mathbb{R}\]</span></p>
+</div>
+<div class="content quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
+<p><span id="eq-series-zin"><span class="math display">\[Z_{in} \big|_{\omega_0} \in \mathbb{R} \tag{7.1}\]</span></span></p>
 <p>At resonance, <span class="math inline">\(W_m\)</span> and <span class="math inline">\(W_e\)</span> will be equal and resonate between one form and the other:</p>
-<p><span class="math display">\[\omega_0^2 = \frac{1}{LC}\]</span></p>
+<p><span id="eq-series-resonance"><span class="math display">\[\omega_0^2 = \frac{1}{LC} \tag{7.2}\]</span></span></p>
 <p><span class="math display">\[W_m = \frac{1}{2} L \bar{I}^2, \qquad W_e = \frac{1}{2} C V^2\]</span></p>
-<p>For the parallel RLC resonator (<span class="math inline">\(Y_{in} \big|_{\omega_0},\ Y_{in} \in \mathbb{R}\)</span>, <span class="math inline">\(\omega_0 = \frac{1}{\sqrt{LC}}\)</span>):</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/parallel-rlc.svg" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Parallel RLC resonator. <span class="math inline">\(\omega_0^2 = \frac{1}{LC}\)</span></figcaption>
+</div>
+</div>
+</div>
+<p>For the parallel RLC resonator, <span class="math inline">\(Y_{in} \big|_{\omega_0} \in \mathbb{R}\)</span>, <span class="math inline">\(\omega_0 = \frac{1}{\sqrt{LC}}\)</span>:</p>
+<div id="fig-parallel-rlc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-parallel-rlc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/parallel-rlc.svg" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-parallel-rlc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.2: Parallel RLC resonator.
+</figcaption>
 </figure>
 </div>
 <p>The resistive/dissipative elements affect the bandwidth, due to parasitics of <span class="math inline">\(L\)</span> and <span class="math inline">\(C\)</span>. But there might be other dissipative factors.</p>
-</section>
-<section id="cavity-electromagnetic-bulk-resonator" class="level2" data-number="7.2">
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><span class="math inline">\(R\)</span> (or <span class="math inline">\(G\)</span>) determines bandwidth; <span class="math inline">\(L\)</span> and <span class="math inline">\(C\)</span> set <span class="math inline">\(\omega_0\)</span>. Real components have parasitic resistance, so <span class="math inline">\(Q\)</span> is always finite.</p>
+</div></div></section>
+<section id="cavity-electromagnetic-bulk-resonator" class="level2 page-columns page-full" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="cavity-electromagnetic-bulk-resonator"><span class="header-section-number">7.2</span> Cavity — Electromagnetic Bulk Resonator</h2>
-<p>e.g.&nbsp;a section of WR-90, PEC terminated at both ends — all faces of the prism are PEC.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/rectangular-cavity.svg" class="img-fluid figure-img" style="width:60.0%"></p>
-<figcaption>Rectangular cavity with dimensions <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(d\)</span> and <span class="math inline">\(\text{TE}_{10p}\)</span> standing wave.</figcaption>
+<p>A <strong>cavity</strong> is an electromagnetic bulk resonator. e.g.&nbsp;a section of WR-90, PEC terminated at both ends — all faces of the prism are PEC.</p>
+<div id="fig-rect-cavity" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rect-cavity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/rectangular-cavity.svg" class="img-fluid figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rect-cavity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.3: Rectangular cavity with dimensions <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(d\)</span> and <span class="math inline">\(\text{TE}_{10p}\)</span> standing wave.
+</figcaption>
 </figure>
 </div>
 <p>WR-90: <span class="math inline">\(a = 0.9''\)</span>, <span class="math inline">\(b = 0.4''\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\text{TE}_{10}\)</span> mode, for <span class="math inline">\(\omega &gt; \omega_{c_{10}}\)</span>.</p>
-<p><span class="math inline">\(d = ?\)</span> <span class="math inline">\(\rightarrow\)</span> for resonance: <span class="math inline">\(d = p\dfrac{\lambda}{2}\)</span>, giving modes <span class="math inline">\(\text{TE}_{10p}\)</span> (generally <span class="math inline">\(\text{TE}_{nmp}\)</span>).</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>WR-90 is a standard rectangular waveguide band: 8.2–12.4 GHz (X-band).</p>
+</div></div><p><span class="math inline">\(d = ?\)</span> <span class="math inline">\(\rightarrow\)</span> for resonance: <span class="math inline">\(d = p\dfrac{\lambda}{2}\)</span>, giving modes <span class="math inline">\(\text{TE}_{10p}\)</span> (generally <span class="math inline">\(\text{TE}_{nmp}\)</span>).</p>
 <p><span class="math inline">\(\therefore\)</span> <span class="math inline">\(\omega_{nmp}\)</span> are discrete frequencies.</p>
-<p><strong>Q factor:</strong></p>
-<p><span class="math display">\[Q = \frac{W_s}{P_d} \cdot \omega_0 = \frac{\omega_0}{\Delta\omega}\]</span></p>
+<div class="callout callout-style-default callout-important callout-titled" title="Q Factor">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Q Factor
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span id="eq-qfactor"><span class="math display">\[Q = \frac{W_s}{P_d} \cdot \omega_0 = \frac{\omega_0}{\Delta\omega} \tag{7.3}\]</span></span></p>
+</div>
+</div>
 <p>e.g.&nbsp;<strong>cavity wavemeter</strong> (cylindrical waveguide) — <span class="math inline">\(d\)</span> is tunable.</p>
 <p>e.g.&nbsp;<strong>dielectric resonator oscillator (DRO)</strong> — small disc of high <span class="math inline">\(\varepsilon_r\)</span> material (<span class="math inline">\(\varepsilon_r \sim 100\)</span>). No PEC, all dielectric. The field <span class="math inline">\(|E|\)</span> is confined inside the disc and decays rapidly with radius <span class="math inline">\(r\)</span>.</p>
-</section>
-<section id="field-analysis" class="level2" data-number="7.3">
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>DROs are widely used in oscillator circuits due to their high <span class="math inline">\(Q\)</span>, small size, and temperature stability.</p>
+</div></div></section>
+<section id="field-analysis" class="level2 page-columns page-full" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="field-analysis"><span class="header-section-number">7.3</span> Field Analysis</h2>
-<p>We will consider a PEC wall RWG. Nevertheless this analysis method is applicable to any type. Consider a WG section with cross section dimensions <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>.</p>
+<p>We will consider a PEC wall RWG. Nevertheless this analysis method is applicable to any type. Consider a WG section with cross section dimensions <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> (see <a href="#fig-rect-cavity" class="quarto-xref">Figure&nbsp;<span>7.3</span></a>).</p>
 <p>For <span class="math inline">\(\text{TE}_{nm}\)</span> modes, the fields are:</p>
-<p><span class="math display">\[H_{z,nm} = A_{nm} \cos\!\left(\frac{n\pi}{a}x\right)\cos\!\left(\frac{m\pi}{b}y\right) e^{\mp j\beta_{nm} z}\]</span></p>
+<p><span id="eq-Hz"><span class="math display">\[H_{z,nm} = A_{nm} \cos\!\left(\frac{n\pi}{a}x\right)\cos\!\left(\frac{m\pi}{b}y\right) e^{\mp j\beta_{nm} z} \tag{7.4}\]</span></span></p>
 <p>where <span class="math inline">\(+z\)</span> is forward propagation and <span class="math inline">\(-z\)</span> is backward propagation.</p>
-<p><span class="math display">\[H_{x,nm} = \mp j\,\frac{\beta_{nm}}{k_{c_{nm}}^2}\cdot A_{nm}\frac{n\pi}{a}\sin\!\left(\frac{n\pi}{a}x\right)\cos\!\left(\frac{m\pi}{b}y\right)e^{\mp j\beta_{nm}z}\]</span></p>
-<p><span class="math display">\[H_{y,nm} = \mp j\,\frac{\beta_{nm}}{k_{c_{nm}}^2}\cdot A_{nm}\frac{m\pi}{b}\cos\!\left(\frac{n\pi}{a}x\right)\sin\!\left(\frac{m\pi}{b}y\right)e^{\mp j\beta_{nm}z}\]</span></p>
+<p><span id="eq-Hx"><span class="math display">\[H_{x,nm} = \mp j\,\frac{\beta_{nm}}{k_{c_{nm}}^2}\cdot A_{nm}\frac{n\pi}{a}\sin\!\left(\frac{n\pi}{a}x\right)\cos\!\left(\frac{m\pi}{b}y\right)e^{\mp j\beta_{nm}z} \tag{7.5}\]</span></span></p>
+<p><span id="eq-Hy"><span class="math display">\[H_{y,nm} = \mp j\,\frac{\beta_{nm}}{k_{c_{nm}}^2}\cdot A_{nm}\frac{m\pi}{b}\cos\!\left(\frac{n\pi}{a}x\right)\sin\!\left(\frac{m\pi}{b}y\right)e^{\mp j\beta_{nm}z} \tag{7.6}\]</span></span></p>
 <p>The dominant mode is <span class="math inline">\(\text{TE}_{10}\)</span>:</p>
 <p><span class="math display">\[H_{z,10} = A_{10}\cos\!\left(\frac{\pi}{a}x\right)e^{\mp j\beta_{10}z}\]</span></p>
 <p>In the cavity there will be <span class="math inline">\(+\)</span> and <span class="math inline">\(-\)</span> propagating waves:</p>
@@ -306,35 +347,61 @@ window.Quarto = {
 <p><span class="math display">\[k_{c_{10}} = \frac{\pi}{a}\]</span></p>
 <p>The wave impedance relation gives:</p>
 <p><span class="math display">\[\frac{E_y}{H_x} = -Z_{\text{TE}} = -\frac{k}{\beta}\,Z_0\]</span></p>
-<p><span class="math display">\[E_y = -jk_0\,\frac{1}{\pi/a}\,Z_0\left(H_1 e^{+j\beta_{10}z} + H_2 e^{-j\beta_{10}z}\right)\]</span></p>
-<p><span class="math inline">\(H_1\)</span> and <span class="math inline">\(H_2\)</span> are unknowns.</p>
-<p>Consider a section of length <span class="math inline">\(d\)</span> of this waveguide. At <span class="math inline">\(z=0\)</span> and <span class="math inline">\(z=d\)</span>, PEC boundary conditions must be satisfied:</p>
-<p><span class="math display">\[E_y(z=0) = 0, \qquad E_y(z=d) = 0 \quad \Rightarrow \text{ equivalent conditions}\]</span></p>
-<p><span class="math display">\[\hat{a}_n \times \mathbf{H}\big|_{z=0} = 0, \qquad \hat{a}_n \times \mathbf{H}\big|_{z=d} = 0 \Rightarrow \text{ equivalent conditions}\]</span></p>
-<p><strong>At</strong> <span class="math inline">\(z=0\)</span>: <span class="math inline">\(\hat{a}_n = +\hat{a}_z\)</span></p>
-<p><span class="math display">\[\hat{a}_n \cdot \bar{M} = H_z = 0\]</span></p>
-<p><span class="math display">\[H_z(z=0) = H_1 + H_2 = 0 \quad \Rightarrow \quad H_1 = -H_2\]</span></p>
+<p><span class="math display">\[E_y = -jk_0\,\frac{a}{\pi}\,Z_0\left(H_1 e^{+j\beta_{10}z} + H_2 e^{-j\beta_{10}z}\right)\]</span></p>
+<p><span class="math inline">\(H_1\)</span> and <span class="math inline">\(H_2\)</span> are unknowns. Consider a section of length <span class="math inline">\(d\)</span>. At <span class="math inline">\(z=0\)</span> and <span class="math inline">\(z=d\)</span>, PEC boundary conditions must be satisfied:</p>
+<p><span class="math display">\[E_y(z=0) = 0, \qquad E_y(z=d) = 0 \quad \Leftrightarrow \quad \hat{a}_n \times \mathbf{H}\big|_{z=0,d} = 0\]</span></p>
+<p><strong>At</strong> <span class="math inline">\(z=0\)</span>: <span class="math inline">\(\hat{a}_n = +\hat{a}_z\)</span>, so <span class="math inline">\(H_z(z=0) = H_1 + H_2 = 0 \Rightarrow H_1 = -H_2\)</span></p>
 <p><strong>At</strong> <span class="math inline">\(z=d\)</span>: <span class="math inline">\(\hat{a}_n = -\hat{a}_z\)</span></p>
-<p><span class="math display">\[\hat{a}_n \cdot \mathbf{H} = -H_z\]</span></p>
 <p><span class="math display">\[H_1\, e^{+j\beta_{10}d} + H_2\, e^{-j\beta_{10}d} = 0\]</span></p>
 <p><span class="math display">\[H_1\!\left(e^{+j\beta_{10}d} - e^{-j\beta_{10}d}\right) = 0\]</span></p>
 <p><span class="math display">\[-2j\,H_1\sin\beta_{10}d = 0 \quad \Rightarrow \quad \beta_{10}d = p\pi, \quad p = 1, 2, 3, \ldots\]</span></p>
 <p>Since <span class="math inline">\(\beta = \dfrac{2\pi}{\lambda_g}\)</span>:</p>
-<p><span class="math display">\[\frac{2\pi}{\lambda_g} \cdot d = p\pi \quad \Rightarrow \quad \boxed{d = p\,\frac{\lambda_g}{2}} \quad \text{(resonance condition)}\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled" title="Resonance Condition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Resonance Condition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span id="eq-resonance-cond"><span class="math display">\[d = p\,\frac{\lambda_g}{2}, \quad p = 1,2,3,\ldots \tag{7.7}\]</span></span></p>
+</div>
+</div>
 <p>From the dispersion relation <span class="math inline">\(\beta^2 = k^2 - k_c^2\)</span>:</p>
 <p><span class="math display">\[\beta_{nm}^2 = \omega^2\mu_0\varepsilon_0 - \left(\frac{n\pi}{a}\right)^2 - \left(\frac{m\pi}{b}\right)^2 = \left(\frac{p\pi}{d}\right)^2\]</span></p>
 <p>Setting <span class="math inline">\(\beta_{nm} = p\pi/d\)</span> and solving for the resonant frequency:</p>
-<p><span class="math display">\[\omega_0^2\mu_0\varepsilon_0 = \left(\frac{n\pi}{a}\right)^2 + \left(\frac{m\pi}{b}\right)^2 + \left(\frac{p\pi}{d}\right)^2 \quad \Rightarrow \quad \omega_{nmp} \; !\]</span></p>
+<div class="callout callout-style-default callout-important callout-titled" title="Resonant Frequencies">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Resonant Frequencies
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span id="eq-resonant-freq"><span class="math display">\[\omega_0^2\mu_0\varepsilon_0 = \left(\frac{n\pi}{a}\right)^2 + \left(\frac{m\pi}{b}\right)^2 + \left(\frac{p\pi}{d}\right)^2 \quad \Rightarrow \quad \omega_{nmp} \tag{7.8}\]</span></span></p>
+</div>
+</div>
 <p>Convention: <span class="math inline">\(d &gt; a &gt; b\)</span>, so <span class="math inline">\(\text{TE}_{101}\)</span> is the dominant mode — the lowest resonant frequency for a PEC RWG cavity.</p>
-<p>The discrete resonant frequencies <span class="math inline">\(\omega_{101} &lt; \omega_{nmp} &lt; \cdots\)</span> are shown below as a spectrum on the <span class="math inline">\(\omega\)</span> axis.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/cavity-spectrum.svg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Discrete resonant frequencies of a rectangular cavity.</figcaption>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Choosing <span class="math inline">\(d &gt; a &gt; b\)</span> ensures <span class="math inline">\(\text{TE}_{101}\)</span> has the lowest <span class="math inline">\(\omega_{nmp}\)</span>, giving a clean single-mode operation near resonance.</p>
+</div></div><div id="fig-spectrum" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spectrum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/cavity-spectrum.svg" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spectrum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.4: Discrete resonant frequencies of a rectangular cavity.
+</figcaption>
 </figure>
 </div>
+<p>As seen in <a href="#fig-spectrum" class="quarto-xref">Figure&nbsp;<span>7.4</span></a>, <span class="math inline">\(\omega_{101}\)</span> is the lowest resonant frequency, with higher-order modes <span class="math inline">\(\omega_{nmp}\)</span> following at discrete intervals.</p>
 <blockquote class="blockquote">
-<p><strong>Note:</strong> Swapping <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(d\)</span> changes nothing physically — only the labelling of modes.</p>
+<p>Swapping <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(d\)</span> changes nothing physically — only the labelling of modes.</p>
 </blockquote>
 
 
@@ -758,4 +825,5 @@ window.Quarto = {
 
 
 
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
