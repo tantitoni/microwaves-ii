@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160">
+  <style>
+    text { font-family: "Latin Modern Math", "STIX Two Math", serif; font-size: 12px; font-style: italic; }
+    line, path { stroke: black; stroke-width: 1.5; fill: none; }
+  </style>
+  <line x1="30" y1="130" x2="200" y2="130"/>
+  <line x1="30" y1="20"  x2="30"  y2="135"/>
+  <polygon points="200,130 192,126 192,134" fill="black"/>
+  <polygon points="30,20 26,28 34,28" fill="black"/>
+  <path d="M 30,130 L 110,40 L 190,130"/>
+  <line x1="110" y1="130" x2="110" y2="134"/>
+  <line x1="190" y1="130" x2="190" y2="134"/>
+  <text x="103" y="148">L/2</text>
+  <text x="186" y="148">L</text>
+  <text x="5" y="25">d/dx ln Z̃</text>
+</svg>

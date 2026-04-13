@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="200" viewBox="0 0 380 200">
+  <style>
+    text { font-family: "Latin Modern Math", "STIX Two Math", serif; font-size: 14px; font-style: italic; }
+    line, polyline { stroke: black; stroke-width: 1.8; fill: none; }
+  </style>
+
+  <!-- Top staircase: descends from upper-left to center-right (many small steps) -->
+  <polyline points="
+    30,20
+    60,20   60,30
+    85,30   85,40
+    110,40  110,50
+    135,50  135,60
+    160,60  160,70
+    185,70  185,80
+    210,80  210,90
+    235,90  235,100
+    260,100
+  "/>
+
+  <!-- Bottom staircase: ascends from lower-left to center-right (mirror image) -->
+  <polyline points="
+    30,180
+    60,180  60,170
+    85,170  85,160
+    110,160 110,150
+    135,150 135,140
+    160,140 160,130
+    185,130 185,120
+    210,120 210,110
+    235,110 235,100
+    260,100
+  "/>
+
+  <!-- Z0 label (wide, left) -->
+  <text x="8" y="105">Z</text>
+  <text x="19" y="110" font-size="11px">0</text>
+
+  <!-- Z_L label (narrow, right) -->
+  <text x="268" y="105">Z</text>
+  <text x="279" y="110" font-size="11px">L</text>
+
+  <!-- Δℓ marker (small bracket below one of the steps) -->
+  <line x1="110" y1="158" x2="135" y2="158"/>
+  <line x1="110" y1="153" x2="110" y2="163"/>
+  <line x1="135" y1="153" x2="135" y2="163"/>
+
+  <!-- Δℓ → 0, N → ∞ label -->
+  <text x="90" y="192" font-size="12px" font-style="normal">Δℓ → 0,  N → ∞</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="200" viewBox="0 0 380 200">
+  <style>
+    text { font-family: "Latin Modern Math", "STIX Two Math", serif; font-size: 14px; font-style: italic; }
+    line, polyline { stroke: black; stroke-width: 1.8; fill: none; }
+  </style>
+
+  <!-- Top staircase: 4 sections, descends from upper-left -->
+  <polyline points="
+    30,25
+    90,25   90,45
+    150,45  150,65
+    210,65  210,85
+    270,85  270,100
+    320,100
+  "/>
+
+  <!-- Bottom staircase: 4 sections, ascends from lower-left (mirror) -->
+  <polyline points="
+    30,175
+    90,175  90,155
+    150,155 150,135
+    210,135 210,115
+    270,115 270,100
+    320,100
+  "/>
+
+  <!-- Z0 label -->
+  <text x="8" y="105">Z</text>
+  <text x="19" y="110" font-size="11px">0</text>
+
+  <!-- Z_L label -->
+  <text x="325" y="105">Z</text>
+  <text x="336" y="110" font-size="11px">L</text>
+
+  <!-- ℓ length indicator (one section) -->
+  <line x1="90" y1="188" x2="150" y2="188"/>
+  <line x1="90"  y1="183" x2="90"  y2="193"/>
+  <line x1="150" y1="183" x2="150" y2="193"/>
+</svg>

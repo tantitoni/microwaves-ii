@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="170" viewBox="0 0 380 170">
+  <style>
+    text { font-family: "Latin Modern Math", "STIX Two Math", serif; font-size: 14px; font-style: italic; }
+    line, path { stroke: black; stroke-width: 1.8; fill: none; }
+  </style>
+
+  <!-- Top curve: taper from wide (Z0) to narrow (ZL) -->
+  <path d="M 40,35 C 130,35 180,55 200,72"/>
+  <!-- Bottom curve: mirror -->
+  <path d="M 40,125 C 130,125 180,105 200,88"/>
+
+  <!-- Narrow straight section at right (ZL) -->
+  <line x1="200" y1="72" x2="300" y2="72"/>
+  <line x1="200" y1="88" x2="300" y2="88"/>
+
+  <!-- Left cap (Z0 opening) -->
+  <line x1="40" y1="35" x2="40" y2="125"/>
+  <!-- Right cap (ZL end) -->
+  <line x1="300" y1="72" x2="300" y2="88"/>
+
+  <!-- Z0 label -->
+  <text x="18" y="85">Z</text>
+  <text x="29" y="90" font-size="11px">0</text>
+
+  <!-- Z_L label -->
+  <text x="308" y="85">Z</text>
+  <text x="319" y="90" font-size="11px">L</text>
+
+  <!-- Length L indicator -->
+  <line x1="40" y1="148" x2="300" y2="148"/>
+  <line x1="40"  y1="143" x2="40"  y2="153"/>
+  <line x1="300" y1="143" x2="300" y2="153"/>
+  <text x="165" y="163" font-size="13px">L</text>
+
+  <!-- w = f(ℓ) label -->
+  <text x="80" y="85" font-size="12px">w = f (ℓ)</text>
+</svg>
