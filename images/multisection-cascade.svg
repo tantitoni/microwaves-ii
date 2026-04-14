@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="150" viewBox="0 0 560 150">
+  <style>
+    text { font-family: "Latin Modern Math", "STIX Two Math", serif; font-size: 12px; font-style: italic; }
+    line, path { stroke: black; stroke-width: 1.4; fill: none; }
+    .blue { fill: #1a4aa8; font-size: 11px; }
+    .dot { fill: black; }
+  </style>
+
+  <!-- Source impedance Z0 block -->
+  <line x1="15" y1="50" x2="15" y2="90"/>
+  <text x="2" y="110">Z₀</text>
+  <text x="2" y="140" font-size="11px">Z_in, Γ_in(θ)</text>
+
+  <!-- Section 1 -->
+  <line x1="15" y1="55" x2="120" y2="55"/>
+  <line x1="15" y1="85" x2="120" y2="85"/>
+  <text x="55" y="45" font-size="11px">ℓ</text>
+  <text x="60" y="75">Z₁</text>
+  <circle class="dot" cx="120" cy="70" r="2"/>
+
+  <!-- Section 2 -->
+  <line x1="120" y1="55" x2="225" y2="55"/>
+  <line x1="120" y1="85" x2="225" y2="85"/>
+  <text x="165" y="45" font-size="11px">ℓ</text>
+  <text x="165" y="75">Z₂</text>
+  <circle class="dot" cx="225" cy="70" r="2"/>
+
+  <!-- Dots -->
+  <text x="245" y="75" font-size="16px">· · ·</text>
+
+  <!-- Section n-1 -->
+  <line x1="300" y1="55" x2="400" y2="55"/>
+  <line x1="300" y1="85" x2="400" y2="85"/>
+  <text x="335" y="75">Z_{n-1}</text>
+  <circle class="dot" cx="400" cy="70" r="2"/>
+
+  <!-- Section n -->
+  <line x1="400" y1="55" x2="510" y2="55"/>
+  <line x1="400" y1="85" x2="510" y2="85"/>
+  <text x="440" y="45" font-size="11px">ℓ</text>
+  <text x="445" y="75">Z_n</text>
+
+  <!-- Load ZL -->
+  <line x1="525" y1="50" x2="525" y2="90"/>
+  <text x="535" y="75">Z_L</text>
+
+  <!-- Recursion annotations -->
+  <text class="blue" x="260" y="115">Γ_{n-1} + (Γ_{n-1} + Γ_n e^{-j2θ}) e^{-j2θ}</text>
+  <text class="blue" x="420" y="115">Γ_{n-1} + Γ_n e^{-j2θ}</text>
+</svg>

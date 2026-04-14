@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="120" viewBox="0 0 520 120">
+  <style>
+    text { font-family: "Latin Modern Math","STIX Two Math",serif; font-size: 12px; font-style: italic; }
+    line { stroke: black; stroke-width: 1.4; }
+    .red { fill: #cc0000; font-size: 11px; }
+    .lbl { font-size: 11px; }
+  </style>
+
+  <!-- Source Z0=50Ω -->
+  <line x1="10" y1="55" x2="10" y2="85"/>
+  <text x="2" y="100" font-size="11px">50 Ω</text>
+
+  <!-- Feed line -->
+  <line x1="10" y1="60" x2="60" y2="60"/>
+  <line x1="10" y1="80" x2="60" y2="80"/>
+
+  <!-- Section 1: Z1=57.4Ω -->
+  <line x1="60" y1="55" x2="60" y2="85"/>
+  <line x1="60" y1="60" x2="160" y2="60"/>
+  <line x1="60" y1="80" x2="160" y2="80"/>
+  <text x="100" y="50" class="red">Z₁</text>
+  <text x="88" y="48" class="lbl" fill="#cc0000">57.4 Ω</text>
+
+  <!-- Section 2: Z2=70.3Ω -->
+  <line x1="160" y1="52" x2="160" y2="88"/>
+  <line x1="160" y1="57" x2="260" y2="57"/>
+  <line x1="160" y1="83" x2="260" y2="83"/>
+  <text x="200" y="47" class="red">Z₂</text>
+  <text x="188" y="45" class="lbl" fill="#cc0000">70.3 Ω</text>
+
+  <!-- Section 3: Z3=86.1Ω -->
+  <line x1="260" y1="49" x2="260" y2="91"/>
+  <line x1="260" y1="54" x2="360" y2="54"/>
+  <line x1="260" y1="86" x2="360" y2="86"/>
+  <text x="300" y="44" class="red">Z₃</text>
+  <text x="288" y="42" class="lbl" fill="#cc0000">86.1 Ω</text>
+
+  <!-- Load stub -->
+  <line x1="360" y1="50" x2="360" y2="90"/>
+  <line x1="360" y1="54" x2="410" y2="54"/>
+  <line x1="360" y1="86" x2="410" y2="86"/>
+  <line x1="410" y1="50" x2="410" y2="90"/>
+  <text x="420" y="75" font-size="11px">100 Ω</text>
+
+  <!-- Γ_in arrow -->
+  <line x1="38" y1="95" x2="22" y2="95" stroke="#cc0000"/>
+  <polygon points="22,95 28,92 28,98" fill="#cc0000"/>
+  <text x="28" y="112" class="red">Γ_in</text>
+
+  <!-- Section length labels -->
+  <text x="100" y="105" font-size="10px" text-anchor="middle">λ₀/4</text>
+  <text x="210" y="105" font-size="10px" text-anchor="middle">λ₀/4</text>
+  <text x="310" y="105" font-size="10px" text-anchor="middle">λ₀/4</text>
+</svg>

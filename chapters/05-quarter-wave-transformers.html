@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; Quarter-Wave Multisection Impedance Transformers – EE 428 Microwaves II</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/06-tapered-lines.html" rel="next">
+<link href="../chapters/04-broadband-matching.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-832e3d7b6b94ddcc90a000f8fabe51a9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating slimcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/05-quarter-wave-transformers.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quarter-Wave Multisection Impedance Transformers</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">EE 428 Microwaves II</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-s-parameters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">S-Parameters and S-Matrix of Lossless Junctions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-coupled-lines.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Even and Odd Mode Analysis of TEM Coupled Lines</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-phase-shifters-hybrids-dividers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Phase Shifters, 3 dB Hybrids, and Power Dividers</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-broadband-matching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Broadband Matching</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-quarter-wave-transformers.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quarter-Wave Multisection Impedance Transformers</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-tapered-lines.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tapered Transmission Lines</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-cavities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Cavities</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-filter-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">General Filter Design from Prototype</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-transmission-line-filters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Transmission Line Filters, Coupled Line Filters, Cavity Coupled Filters</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-microwave-devices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Active and Passive Microwave Semiconductor Devices</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#chebyshev-transformer" id="toc-chebyshev-transformer" class="nav-link active" data-scroll-target="#chebyshev-transformer"><span class="header-section-number">5.1</span> Chebyshev Transformer</a></li>
+  <li><a href="#chebyshev-polynomials-of-the-first-kind" id="toc-chebyshev-polynomials-of-the-first-kind" class="nav-link" data-scroll-target="#chebyshev-polynomials-of-the-first-kind"><span class="header-section-number">5.2</span> Chebyshev Polynomials of the First Kind</a></li>
+  <li><a href="#design-constraints" id="toc-design-constraints" class="nav-link" data-scroll-target="#design-constraints"><span class="header-section-number">5.3</span> Design Constraints</a></li>
+  <li><a href="#connecting-the-cosine-expansion-to-the-chebyshev-polynomial" id="toc-connecting-the-cosine-expansion-to-the-chebyshev-polynomial" class="nav-link" data-scroll-target="#connecting-the-cosine-expansion-to-the-chebyshev-polynomial"><span class="header-section-number">5.4</span> Connecting the Cosine Expansion to the Chebyshev Polynomial</a></li>
+  <li><a href="#design-procedure" id="toc-design-procedure" class="nav-link" data-scroll-target="#design-procedure"><span class="header-section-number">5.5</span> Design Procedure</a></li>
+  <li><a href="#review-multisection-matching-summary" id="toc-review-multisection-matching-summary" class="nav-link" data-scroll-target="#review-multisection-matching-summary"><span class="header-section-number">5.6</span> Review: Multisection Matching Summary</a></li>
+  <li><a href="#example-3-section-equi-ripple-transformer" id="toc-example-3-section-equi-ripple-transformer" class="nav-link" data-scroll-target="#example-3-section-equi-ripple-transformer"><span class="header-section-number">5.7</span> Example: 3-Section Equi-Ripple Transformer</a></li>
+  <li><a href="#mf-impedance-transformer-butterworthbinomial" id="toc-mf-impedance-transformer-butterworthbinomial" class="nav-link" data-scroll-target="#mf-impedance-transformer-butterworthbinomial"><span class="header-section-number">5.8</span> MF Impedance Transformer (Butterworth–Binomial)</a>
+  <ul class="collapse">
+  <li><a href="#closed-form-expression" id="toc-closed-form-expression" class="nav-link" data-scroll-target="#closed-form-expression"><span class="header-section-number">5.8.1</span> Closed-Form Expression</a></li>
+  <li><a href="#example-n2-z_l-100omega-z_0-50omega" id="toc-example-n2-z_l-100omega-z_0-50omega" class="nav-link" data-scroll-target="#example-n2-z_l-100omega-z_0-50omega"><span class="header-section-number">5.8.2</span> Example: <span class="math inline">\(N=2\)</span>, <span class="math inline">\(Z_L = 100\,\Omega\)</span>, <span class="math inline">\(Z_0 = 50\,\Omega\)</span></a></li>
+  <li><a href="#comparison-with-chebyshev-exercise" id="toc-comparison-with-chebyshev-exercise" class="nav-link" data-scroll-target="#comparison-with-chebyshev-exercise"><span class="header-section-number">5.8.3</span> Comparison with Chebyshev (Exercise)</a></li>
+  </ul></li>
+  <li><a href="#n3-design-comparison-equi-ripple-vs-maximally-flat" id="toc-n3-design-comparison-equi-ripple-vs-maximally-flat" class="nav-link" data-scroll-target="#n3-design-comparison-equi-ripple-vs-maximally-flat"><span class="header-section-number">5.9</span> N=3 Design Comparison: Equi-Ripple vs Maximally Flat</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quarter-Wave Multisection Impedance Transformers</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="chebyshev-transformer" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="chebyshev-transformer"><span class="header-section-number">5.1</span> Chebyshev Transformer</h2>
+<p>The Chebyshev response is <strong>optimum</strong> in the sense of widest bandwidth against an acceptable ripple <span class="math inline">\(\Gamma_m\)</span>.</p>
+<div id="fig-cheby-resp" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cheby-resp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/chebyshev-response.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cheby-resp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: Chebyshev transformer response for <span class="math inline">\(N=4\)</span>: equiripple passband with ripple level <span class="math inline">\(\Gamma_m\)</span>, bandwidth BW, and rapid roll-off outside. The response is periodic in frequency; <span class="math inline">\(\theta = \pi/2\)</span> corresponds to <span class="math inline">\(\lambda/4\)</span> sections.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Key properties">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Key properties
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Passband <span class="math inline">\(\theta \in [\theta_m,\, \pi - \theta_m]\)</span>: <span class="math inline">\(|\Gamma_{in}| \le \Gamma_m\)</span> with <strong>equiripple</strong> — all <span class="math inline">\(N\)</span> ripple peaks touch exactly <span class="math inline">\(\Gamma_m\)</span>.</li>
+<li>Outside the passband <span class="math inline">\(|\Gamma_{in}|\)</span> grows as a Chebyshev polynomial — faster than any other equal-ripple design of the same order.</li>
+<li><span class="math inline">\(\theta = \pi/2\)</span> is the centre (<span class="math inline">\(\lambda/4\)</span> sections); the response repeats periodically in frequency.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="chebyshev-polynomials-of-the-first-kind" class="level2 page-columns page-full" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="chebyshev-polynomials-of-the-first-kind"><span class="header-section-number">5.2</span> Chebyshev Polynomials of the First Kind</h2>
+<p><span class="math inline">\(T_n(x)\)</span> — Chebyshev polynomial of the first kind, order <span class="math inline">\(n\)</span>:</p>
+<p><span class="math display">\[T_0(x) = 1, \quad T_1(x) = x, \quad T_2(x) = 2x^2 - 1, \quad T_3(x) = 4x^3 - 3x, \quad T_4(x) = 8x^4 - 8x^2 + 1\]</span></p>
+<p><strong>Recursive relation:</strong></p>
+<p><span class="math display">\[T_k(x) = 2x\,T_{k-1}(x) - T_{k-2}(x)\]</span></p>
+<p><strong>Key properties:</strong></p>
+<ul>
+<li><span class="math inline">\(|T_n(x)| \le 1\)</span> if <span class="math inline">\(|x| \le 1\)</span></li>
+<li><span class="math inline">\(T_n(1) = 1\)</span>, <span class="math inline">\(\quad T_n(-1) = (-1)^n\)</span></li>
+<li><span class="math inline">\(|T_n(0)| = \begin{cases} 0 &amp; n \text{ odd} \\ 1 &amp; n \text{ even} \end{cases}\)</span></li>
+</ul>
+<p><strong>Trigonometric identity</strong> — for <span class="math inline">\(|x| \le 1\)</span>, write <span class="math inline">\(x = \cos\theta\)</span>:</p>
+<p><span class="math display">\[T_n(\cos\theta) = \cos(n\theta)\]</span></p>
+<p>This can be verified by induction using the recursive relation. Examples:</p>
+<p><span class="math display">\[T_2(\cos\theta) = 2\cos^2\theta - 1 = \cos 2\theta\]</span> <span class="math display">\[T_3(\cos\theta) = 4\cos^3\theta - 3\cos\theta = \cos 3\theta\]</span></p>
+<p><strong>Hyperbolic identity</strong> — for <span class="math inline">\(|x| &gt; 1\)</span>, write <span class="math inline">\(x = \cosh\theta\)</span>:</p>
+<p><span class="math display">\[T_n(\cosh\theta) = \cosh(n\theta)\]</span></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>The two identities show why <span class="math inline">\(T_n\)</span> is bounded by 1 in <span class="math inline">\([-1,1]\)</span> (oscillates like cosine) but grows without bound outside (grows like cosh). This is exactly the behaviour needed for equiripple passband with rapid out-of-band rejection.</p>
+</div></div></section>
+<section id="design-constraints" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="design-constraints"><span class="header-section-number">5.3</span> Design Constraints</h2>
+<p>For broadband impedance matching the system engineer specifies:</p>
+<ul>
+<li><strong>Bandwidth</strong>: <span class="math inline">\(\theta \in [\theta_m,\; \pi - \theta_m]\)</span>, centred at <span class="math inline">\(f_0\)</span> where all sections are <span class="math inline">\(\lambda/4\)</span></li>
+<li><strong><span class="math inline">\(\theta_0 = \pi/2\)</span></strong> at the centre frequency <span class="math inline">\(f_0\)</span></li>
+<li><strong><span class="math inline">\(\Gamma_m\)</span></strong>: maximum allowed reflection (ripple) within the passband</li>
+</ul>
+<p>The number of <span class="math inline">\(\lambda/4\)</span> sections <span class="math inline">\(N\)</span> is a <strong>design parameter</strong> — chosen by the designer.</p>
+<p>Since <span class="math inline">\(\theta = \beta\ell\)</span> and <span class="math inline">\(\ell = \lambda_0/4\)</span>:</p>
+<p><span class="math display">\[\theta_0 = \beta \cdot \frac{\lambda_0}{4} = \frac{\omega}{v_p}\cdot\frac{\lambda_0}{4} = \frac{2\pi f_0}{v_p}\cdot\frac{v_p}{4f_0} = \frac{\pi}{2}, \qquad \beta = \frac{\omega}{v_p}\]</span></p>
+<p>(<span class="math inline">\(v_p\)</span> is assumed constant across the band.)</p>
+<p>The response repeats periodically in <span class="math inline">\(\theta\)</span> (hence in frequency):</p>
+<div id="fig-cheby-passband" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cheby-passband-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/chebyshev-passband.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cheby-passband-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: Chebyshev transformer response showing two periods. Blue shaded regions are the passband <span class="math inline">\([\theta_m, \pi-\theta_m]\)</span> where <span class="math inline">\(|\Gamma_{in}| \le \Gamma_m\)</span>.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="connecting-the-cosine-expansion-to-the-chebyshev-polynomial" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="connecting-the-cosine-expansion-to-the-chebyshev-polynomial"><span class="header-section-number">5.4</span> Connecting the Cosine Expansion to the Chebyshev Polynomial</h2>
+<p>Starting from the small-reflection result for the <span class="math inline">\(N\)</span>-section symmetric transformer:</p>
+<p><span class="math display">\[\Gamma_{in} \simeq \Gamma_0 + \Gamma_1\,e^{-j2\theta} + \cdots + \Gamma_N\,e^{-j2N\theta}\]</span></p>
+<p><strong>Real-load simplification.</strong> If <span class="math inline">\(Z_L = R_L &gt; Z_0\)</span> is real, then all <span class="math inline">\(\Gamma_k\)</span> can be taken real and positive (<span class="math inline">\(\rho_k &gt; 0\)</span>), because the imaginary part of the load can always be tuned out:</p>
+<p><span class="math display">\[\Gamma_{in} \simeq \rho_0 + \rho_1\,e^{-j2\theta} + \cdots + \rho_N\,e^{-j2N\theta}, \qquad \rho_k &gt; 0\]</span></p>
+<p><strong>Symmetry constraint</strong> (<span class="math inline">\(\rho_k = \rho_{N-k}\)</span>):</p>
+<p><span class="math display">\[\rho_0 = \rho_N, \quad \rho_1 = \rho_{N-1}, \quad \rho_2 = \rho_{N-2}, \quad \ldots\]</span></p>
+<p>Factoring out <span class="math inline">\(e^{-jN\theta}\)</span> and pairing conjugate terms collapses the series into the cosine form derived earlier:</p>
+<p><span class="math display">\[\Gamma_{in} \simeq 2\,e^{-jN\theta}\!\left(\rho_0\cos N\theta + \rho_1\cos(N-2)\theta + \cdots\right)\]</span></p>
+<p><strong>Chebyshev assignment.</strong> Using <span class="math inline">\(T_n(\cos\theta) = \cos(n\theta)\)</span> and the identity <span class="math inline">\(\cos 2\theta = T_2(\cos\theta) = 2\cos^2\theta - 1\)</span>, each cosine term can be expressed as a Chebyshev polynomial evaluated at <span class="math inline">\(\cos\theta\)</span>. Setting</p>
+<p><span class="math display">\[\Gamma_{in}(\theta) = \Gamma_m\,T_N\!\left(\frac{\cos\theta}{\cos\theta_m}\right)\]</span></p>
+<p>automatically produces an equiripple response of level <span class="math inline">\(\Gamma_m\)</span> in the passband and determines all <span class="math inline">\(\rho_k\)</span> by matching the polynomial coefficients.</p>
+<p><strong>Passband condition.</strong> Since <span class="math inline">\(1/\cos\theta_m = \sec\theta_m\)</span>:</p>
+<p><span class="math display">\[\left|T_N\!\left(\frac{\cos\theta}{\cos\theta_m}\right)\right| \le 1 \quad \text{for } \theta \in [\theta_m,\, \pi-\theta_m]\]</span></p>
+<p><span class="math display">\[\left|\Gamma_m\, T_N\!\left(\sec\theta_m\cos\theta\right)\right| \le \Gamma_m \quad \text{for } \theta \in [\theta_m,\, \pi-\theta_m]\]</span></p>
+<p>This is the <strong>desired approximating function</strong> for the equiripple matching. The full expression for the input reflection is:</p>
+<p><span class="math display">\[\Gamma_{in} = \Gamma_m\,e^{-jN\theta}\,T_N(\sec\theta_m\cos\theta) = 2\,e^{-jN\theta}\!\left(\rho_0\cos N\theta + \rho_1\cos(N-2)\theta + \cdots\right)\]</span></p>
+<p>where <span class="math inline">\(\sec\theta_m\)</span> is the <strong>bandwidth parameter</strong>.</p>
+<p><strong>Boundary condition at <span class="math inline">\(\theta = 0\)</span>.</strong> At DC both the exact and approximate expressions must equal the total mismatch:</p>
+<p><span class="math display">\[\Gamma_{in}\big|_{\theta=0} = \frac{Z_L - Z_0}{Z_L + Z_0} = \Gamma_m\, T_N(\sec\theta_m)\]</span></p>
+<div class="callout callout-style-default callout-important callout-titled" title="$\Gamma_m$, $\theta_m$, $N$ are related">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span><span class="math inline">\(\Gamma_m\)</span>, <span class="math inline">\(\theta_m\)</span>, <span class="math inline">\(N\)</span> are related
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\Gamma_m = \frac{1}{T_N(\sec\theta_m)}\cdot\frac{Z_L - Z_0}{Z_L + Z_0}, \qquad T_N(\sec\theta_m) = \frac{1}{\Gamma_m}\cdot\frac{Z_L - Z_0}{Z_L + Z_0}\]</span></p>
+<p>Specifying any two of <span class="math inline">\(\{\Gamma_m,\,\theta_m,\,N\}\)</span> determines the third.</p>
+</div>
+</div>
+<p>The passband edge touchpoints confirm the ripple level:</p>
+<p><span class="math display">\[\left|T_N(\sec\theta_m\cos\theta)\right|_{\theta=\theta_m,\;\theta=\pi-\theta_m} = 1
+\quad\Longrightarrow\quad
+\left|\Gamma_m\,e^{-jN\theta}\,T_N(\sec\theta_m\cos\theta)\right|_{\theta=\theta_m,\;\pi-\theta_m} = \Gamma_m\]</span></p>
+<p><strong>Behaviour at <span class="math inline">\(\theta = \pi/2\)</span> (centre frequency):</strong></p>
+<p><span class="math display">\[T_N(\sec\theta_m\cos(\pi/2)) = T_N(0) = \begin{cases} 0 &amp; N \text{ odd} \\ 1 &amp; N \text{ even} \end{cases}\]</span></p>
+<p>So at the centre frequency: <span class="math inline">\(N\)</span> even <span class="math inline">\(\Rightarrow |\Gamma_{in}| = \Gamma_m\)</span>; <span class="math inline">\(N\)</span> odd <span class="math inline">\(\Rightarrow |\Gamma_{in}| = 0\)</span>.</p>
+<p><strong>Outside the passband</strong> the hyperbolic identity applies:</p>
+<p><span class="math display">\[T_N(x) = \cosh(N\operatorname{arccosh}(x)), \quad |x| &gt; 1\]</span></p>
+</section>
+<section id="design-procedure" class="level2 page-columns page-full" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="design-procedure"><span class="header-section-number">5.5</span> Design Procedure</h2>
+<blockquote class="blockquote">
+<p>Design tables will be provided in EE 428.</p>
+</blockquote>
+<p><strong>Prerequisites:</strong></p>
+<ul>
+<li><span class="math inline">\(Z_L \in \mathbb{R}\)</span> — if not, tune out <span class="math inline">\(X_L\)</span> first</li>
+<li><span class="math inline">\(Z_L = R_L &gt; Z_0\)</span> — if not, swap source and load (“<span class="math inline">\(\rho_k\)</span> becomes negative” otherwise)</li>
+</ul>
+<p><strong>Outputs:</strong> <span class="math inline">\(N\)</span> section impedances <span class="math inline">\(Z_{ch,k}\)</span>, each of length <span class="math inline">\(\ell_0 = \lambda_0/4\)</span>.</p>
+<p>Given the design parameter <span class="math inline">\(K\)</span>:</p>
+<p><span class="math display">\[T_N(\sec\theta_m) = \cosh(N\operatorname{arccosh}(\sec\theta_m)) = K = \frac{1}{\Gamma_m}\cdot\frac{Z_L - Z_0}{Z_L + Z_0}\]</span></p>
+<ul>
+<li>If <span class="math inline">\(\theta_m\)</span> is given <span class="math inline">\(\Rightarrow\)</span> compute <span class="math inline">\(\Gamma_m = \dfrac{Z_L - Z_0}{Z_L + Z_0}\cdot\dfrac{1}{T_N(\sec\theta_m)}\)</span></li>
+<li>If <span class="math inline">\(\Gamma_m\)</span> is given <span class="math inline">\(\Rightarrow\)</span> compute <span class="math inline">\(\sec\theta_m = \cosh\!\left(\dfrac{\operatorname{arccosh}(K)}{N}\right)\)</span></li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>The <span class="math inline">\(Z_{ch,k}\)</span> values are found by expanding <span class="math inline">\(T_N(\sec\theta_m\cos\theta)\)</span> in the cosine series and reading off the <span class="math inline">\(\rho_k\)</span> coefficients, then inverting <span class="math inline">\(\rho_k \approx \frac{1}{2}\ln(Z_{k+1}/Z_k)\)</span>.</p>
+</div></div></section>
+<section id="review-multisection-matching-summary" class="level2 page-columns page-full" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="review-multisection-matching-summary"><span class="header-section-number">5.6</span> Review: Multisection Matching Summary</h2>
+<p><span class="math inline">\(N\)</span> cascaded <span class="math inline">\(\lambda_0/4\)</span> line segments connect <span class="math inline">\(Z_0\)</span> to a real load <span class="math inline">\(R_L\)</span>. The design goal is:</p>
+<p><span class="math display">\[|\rho_{in}| = \left|\frac{Z_{in} - Z_0}{Z_{in} + Z_0}\right| \le \rho_m \quad \text{for } \theta \in [\theta_m,\,\pi-\theta_m] \;\longrightarrow\; f \in [f_1, f_2]\]</span></p>
+<p>where <span class="math inline">\(\theta = \beta\ell = 2\pi f \dfrac{\ell}{v_p}\)</span>.</p>
+<p>Under the <strong>small-reflection assumption</strong>, <span class="math inline">\(\rho_{in} \approx f(\theta)\)</span> — a function of electrical length only. The design task is to:</p>
+<ol type="1">
+<li><strong>Choose</strong> an approximation function <span class="math inline">\(f(\theta)\)</span></li>
+<li><strong>Fit</strong> its parameters to meet <span class="math inline">\(\rho_m\)</span> over the bandwidth <span class="math inline">\(\theta_m\)</span></li>
+</ol>
+<p><strong>Design parameters:</strong> <span class="math inline">\(\theta_m\)</span> (bandwidth), <span class="math inline">\(\rho_m\)</span> (ripple), <span class="math inline">\(N\)</span> (number of sections) <strong>Design output:</strong> section impedances <span class="math inline">\(Z_{ch,k}\)</span>, <span class="math inline">\(k = 1, 2, \ldots, N\)</span>, each of length <span class="math inline">\(\ell_0 = \lambda_0/4\)</span></p>
+<p><strong>Two standard approximation functions:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Chebyshev (CER)</th>
+<th>Butterworth (MF)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Response</td>
+<td>Equi-ripple</td>
+<td>Maximally flat</td>
+</tr>
+<tr class="even">
+<td>Property</td>
+<td>Optimum <span class="math inline">\(\rho_m\)</span>–<span class="math inline">\(\theta_m\)</span> relation</td>
+<td>Smoothest <span class="math inline">\(\rho_{in}\)</span> at centre</td>
+</tr>
+<tr class="odd">
+<td>Bandwidth</td>
+<td>Widest for a given <span class="math inline">\(\rho_m\)</span></td>
+<td>Narrower than CER</td>
+</tr>
+</tbody>
+</table>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>CER = Constant Equi-Ripple. MF = Maximally Flat. For the same <span class="math inline">\(N\)</span> and <span class="math inline">\(\rho_m\)</span>, Chebyshev always gives a wider bandwidth than Butterworth.</p>
+</div></div></section>
+<section id="example-3-section-equi-ripple-transformer" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="example-3-section-equi-ripple-transformer"><span class="header-section-number">5.7</span> Example: 3-Section Equi-Ripple Transformer</h2>
+<p><strong>Given:</strong> <span class="math inline">\(Z_0 = 50\,\Omega\)</span>, <span class="math inline">\(Z_L = 100\,\Omega\)</span>, <span class="math inline">\(\Gamma_m = 0.05\)</span>, <span class="math inline">\(N = 3\)</span>.</p>
+<div id="fig-cheby-3sec" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cheby-3sec-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/cheby-3section-example.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cheby-3sec-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.3: Three-section equi-ripple transformer from 50 Ω to 100 Ω.
+</figcaption>
+</figure>
+</div>
+<p><strong>Step 1 — cosine expansion for <span class="math inline">\(N=3\)</span>.</strong></p>
+<p><span class="math display">\[\Gamma_{in} \simeq 2\,e^{-j3\theta}(\rho_0\cos 3\theta + \rho_1\cos\theta)
+= \Gamma_m\,e^{-j3\theta}\,T_3(\sec\theta_m\cos\theta)\]</span></p>
+<p>Expanding <span class="math inline">\(T_3(x) = 4x^3 - 3x\)</span> with <span class="math inline">\(x = \sec\theta_m\cos\theta\)</span> and applying <span class="math inline">\(\cos^3\theta = (\cos 3\theta + 3\cos\theta)/4\)</span>:</p>
+<p><span class="math display">\[T_3(\sec\theta_m\cos\theta) = \sec^3\theta_m\cos 3\theta + (3\sec^3\theta_m - 3\sec\theta_m)\cos\theta\]</span></p>
+<p>Matching coefficients:</p>
+<p><span class="math display">\[\rho_0 = \frac{\Gamma_m}{2}\sec^3\theta_m, \qquad \rho_1 = \frac{\Gamma_m}{2}(3\sec^3\theta_m - 3\sec\theta_m)\]</span></p>
+<p><strong>Step 2 — find <span class="math inline">\(\sec\theta_m\)</span>.</strong></p>
+<p><span class="math display">\[K = \frac{1}{\Gamma_m}\cdot\frac{Z_L - Z_0}{Z_L + Z_0} = \frac{1}{0.05}\cdot\frac{50}{150} = \frac{20}{3} \approx 6.667\]</span></p>
+<p><span class="math display">\[\sec\theta_m = \cosh\!\left(\frac{\operatorname{arccosh}(K)}{N}\right) = \cosh\!\left(\frac{\operatorname{arccosh}(6.667)}{3}\right) \approx 1.395 \quad\Rightarrow\quad \theta_m = 44.2°\]</span></p>
+<p><strong>Step 3 — reflection coefficients</strong> (symmetric: <span class="math inline">\(\rho_2 = \rho_1\)</span>, <span class="math inline">\(\rho_3 = \rho_0\)</span>):</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(k\)</span></th>
+<th><span class="math inline">\(\rho_k\)</span></th>
+<th>Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.069</td>
+<td><span class="math inline">\(\rho_0 = (Z_1 - Z_0)/(Z_1 + Z_0)\)</span></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.101</td>
+<td><span class="math inline">\(\rho_1 = (Z_2 - Z_1)/(Z_2 + Z_1)\)</span></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.101</td>
+<td><span class="math inline">\(\rho_2 = \rho_1\)</span> (symmetry)</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.075</td>
+<td><span class="math inline">\(\rho_3 = (Z_L - Z_3)/(Z_L + Z_3)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 4 — section impedances:</strong></p>
+<p><span class="math display">\[Z_1 = Z_0\,\frac{1+\rho_0}{1-\rho_0} = 57.4\,\Omega, \quad
+Z_2 = Z_1\,\frac{1+\rho_1}{1-\rho_1} = 70.3\,\Omega, \quad
+Z_3 = Z_2\,\frac{1+\rho_2}{1-\rho_2} = 86.1\,\Omega\]</span></p>
+<p><strong>Check:</strong> <span class="math inline">\(\rho_3 = (Z_L - Z_3)/(Z_L + Z_3) = 0.075 \;\Rightarrow\; Z_L \approx 98.9\,\Omega\)</span> (not exactly 100 Ω — small error from the small-reflection approximation).</p>
+</section>
+<section id="mf-impedance-transformer-butterworthbinomial" class="level2 page-columns page-full" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="mf-impedance-transformer-butterworthbinomial"><span class="header-section-number">5.8</span> MF Impedance Transformer (Butterworth–Binomial)</h2>
+<p>The maximally flat (MF) response is constructed from:</p>
+<p><span class="math display">\[\Gamma = A\!\left(1 + e^{-j2\theta}\right)^N\]</span></p>
+<p>At the centre frequency <span class="math inline">\(\theta_0 = \pi/2\)</span> (<span class="math inline">\(\ell = \lambda_0/4\)</span>) the response and all its first <span class="math inline">\(N-1\)</span> derivatives vanish:</p>
+<p><span class="math display">\[\Gamma(\theta_0) = 0, \qquad \frac{\partial \Gamma}{\partial \theta}\bigg|_{\theta_0} = 0, \qquad \frac{\partial^k \Gamma}{\partial \theta^k}\bigg|_{\theta_0} = 0 \quad k = 1, 2, \ldots, N-1\]</span></p>
+<p>This is the definition of <strong>maximally flat</strong> — the “smoothest” possible <span class="math inline">\(|\rho_{in}|\)</span> around <span class="math inline">\(f_0\)</span>.</p>
+<div id="fig-mf-resp" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mf-resp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/mf-response.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mf-resp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.4: MF transformer response <span class="math inline">\(|\Gamma| = A\cdot 2^N\cos^N\theta\)</span>. The response touches zero at <span class="math inline">\(\theta=\pi/2\)</span> and grows monotonically toward the band edges.
+</figcaption>
+</figure>
+</div>
+<section id="closed-form-expression" class="level3" data-number="5.8.1">
+<h3 data-number="5.8.1" class="anchored" data-anchor-id="closed-form-expression"><span class="header-section-number">5.8.1</span> Closed-Form Expression</h3>
+<p>Factoring <span class="math inline">\(e^{-jN\theta}\)</span> from the binomial:</p>
+<p><span class="math display">\[\Gamma = A\!\left(1 + e^{-j2\theta}\right)^N
+= A\,e^{-jN\theta}\!\left(e^{j\theta}+e^{-j\theta}\right)^N
+= A\cdot 2^N\,e^{-jN\theta}\cos^N\theta\]</span></p>
+<p><span class="math display">\[|\Gamma| = A\cdot 2^N\cos^N\theta\]</span></p>
+<p><strong>Boundary condition at <span class="math inline">\(\theta = 0\)</span>:</strong></p>
+<p><span class="math display">\[\Gamma_{in}\big|_{\theta=0} = \frac{Z_L - Z_0}{Z_L + Z_0} = A\cdot 2^N \quad\Longrightarrow\quad A = \frac{1}{2^N}\cdot\frac{Z_L - Z_0}{Z_L + Z_0}\]</span></p>
+<p>To find the section impedances, expand in the cosine series (small-reflection assumption):</p>
+<p><span class="math display">\[\Gamma_{in} = e^{-jN\theta}\cdot 2\!\left(\rho_0\cos N\theta + \cdots\right)\]</span></p>
+<p>and match coefficients with <span class="math inline">\(A\cdot 2^N e^{-jN\theta}\cos^N\theta\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="ρ_m is not a free parameter for MF">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>ρ_m is not a free parameter for MF
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Unlike Chebyshev, the maximally flat design has no equiripple level to specify. To find the bandwidth, choose <span class="math inline">\(\rho_m\)</span> and solve <span class="math inline">\(A\cdot 2^N\cos^N\theta_m = \rho_m\)</span> for <span class="math inline">\(\theta_m\)</span>, then compare with the Chebyshev result.</p>
+</div>
+</div>
+</section>
+<section id="example-n2-z_l-100omega-z_0-50omega" class="level3" data-number="5.8.2">
+<h3 data-number="5.8.2" class="anchored" data-anchor-id="example-n2-z_l-100omega-z_0-50omega"><span class="header-section-number">5.8.2</span> Example: <span class="math inline">\(N=2\)</span>, <span class="math inline">\(Z_L = 100\,\Omega\)</span>, <span class="math inline">\(Z_0 = 50\,\Omega\)</span></h3>
+<p><span class="math display">\[\Gamma_{in} \simeq 2e^{-j2\theta}\!\left(\rho_0\cos 2\theta + \tfrac{1}{2}\rho_1\right) = A\,e^{-j2\theta}\cdot 4\cos^2\theta\]</span></p>
+<p><span class="math display">\[A = \frac{1}{4}\cdot\frac{100-50}{100+50} = \frac{1}{4}\cdot\frac{1}{3} = \frac{1}{12}\]</span></p>
+<p>Matching the cosine expansion <span class="math inline">\(4\cos^2\theta = 2\cos 2\theta + 2\)</span>:</p>
+<p><span class="math display">\[\rho_0 = A\cdot\frac{1}{2} = \frac{1}{12}\cdot\frac{1}{2} \cdot 2= \frac{1}{12}, \qquad \rho_1 = \frac{1}{6}\]</span></p>
+<p>Section impedances:</p>
+<p><span class="math display">\[Z_1 = Z_0\,\frac{1+\rho_0}{1-\rho_0} = 59.1\,\Omega, \qquad Z_2 = Z_1\,\frac{1+\rho_1}{1-\rho_1} = 82.7\,\Omega\]</span></p>
+<p><strong>Check:</strong> <span class="math inline">\(Z_L \approx 97.8\,\Omega \ne 100\,\Omega\)</span> — small error from the small-reflection approximation.</p>
+</section>
+<section id="comparison-with-chebyshev-exercise" class="level3 page-columns page-full" data-number="5.8.3">
+<h3 data-number="5.8.3" class="anchored" data-anchor-id="comparison-with-chebyshev-exercise"><span class="header-section-number">5.8.3</span> Comparison with Chebyshev (Exercise)</h3>
+<p>For <span class="math inline">\(\rho_m = 0.05\)</span> find <span class="math inline">\(\theta_m\)</span> for the MF design and compare with Chebyshev:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\(N=2\)</span> MF</th>
+<th><span class="math inline">\(N=3\)</span> MF</th>
+<th>Chebyshev</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\theta_m\)</span></td>
+<td><span class="math inline">\(67°\)</span></td>
+<td><span class="math inline">\(58°\)</span></td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\pi - \theta_m\)</span></td>
+<td><span class="math inline">\(113°\)</span></td>
+<td><span class="math inline">\(122°\)</span></td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td>Fractional BW (<span class="math inline">\(f_2/f_1\)</span>)</td>
+<td><span class="math inline">\(113°/67°\)</span></td>
+<td><span class="math inline">\(122°/58°\)</span></td>
+<td>wider</td>
+</tr>
+</tbody>
+</table>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Fractional bandwidth <span class="math inline">\(\text{FBW} = f_2/f_1 = (\pi - \theta_m)/\theta_m\)</span>. Chebyshev always gives a wider FBW than MF for the same <span class="math inline">\(N\)</span> and <span class="math inline">\(\rho_m\)</span>.</p>
+</div></div></section>
+</section>
+<section id="n3-design-comparison-equi-ripple-vs-maximally-flat" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="n3-design-comparison-equi-ripple-vs-maximally-flat"><span class="header-section-number">5.9</span> N=3 Design Comparison: Equi-Ripple vs Maximally Flat</h2>
+<p>For <span class="math inline">\(Z_0 = 50\,\Omega\)</span>, <span class="math inline">\(Z_L = 100\,\Omega\)</span>, <span class="math inline">\(N = 3\)</span>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\(Z_1\,(\Omega)\)</span></th>
+<th><span class="math inline">\(Z_2\,(\Omega)\)</span></th>
+<th><span class="math inline">\(Z_3\,(\Omega)\)</span></th>
+<th><span class="math inline">\(Z_L^{\text{approx}}\,(\Omega)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Equi-Ripple (SRA)</td>
+<td>57.41</td>
+<td>70.31</td>
+<td>86.11</td>
+<td>98.9</td>
+</tr>
+<tr class="even">
+<td>Maximally Flat (SRA)</td>
+<td>54.35</td>
+<td>69.88</td>
+<td>89.84</td>
+<td>97.7</td>
+</tr>
+</tbody>
+</table>
+<p>The last column is expected to be <span class="math inline">\(100\,\Omega\)</span> — the deviation is due to the <strong>small-reflection approximation</strong>.</p>
+<p>The more accurate formula uses the logarithmic approximation for each section coefficient:</p>
+<p><span class="math display">\[\rho_k = \frac{Z_{k+1} - Z_k}{Z_{k+1} + Z_k} \approx \frac{1}{2}\ln\!\left(\frac{Z_{k+1}}{Z_k}\right)\]</span></p>
+<p>Using exact design tables (ln-based):</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\(Z_1\,(\Omega)\)</span></th>
+<th><span class="math inline">\(Z_2\,(\Omega)\)</span></th>
+<th><span class="math inline">\(Z_3\,(\Omega)\)</span></th>
+<th><span class="math inline">\(Z_L^{\text{approx}}\,(\Omega)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ln MF</td>
+<td>54.52</td>
+<td>70.7</td>
+<td>91.68</td>
+<td>99.98</td>
+</tr>
+<tr class="even">
+<td>ln ER</td>
+<td>57.38</td>
+<td>70.7</td>
+<td>87.1</td>
+<td>99.96</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-warning callout-titled" title="Practical limit">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Practical limit
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>More than <strong>5–6 sections</strong> is generally not realizable in practice — fabrication tolerances and physical coupling between sections make higher-order designs unreliable.</p>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/04-broadband-matching.html" class="pagination-link" aria-label="Broadband Matching">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Broadband Matching</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/06-tapered-lines.html" class="pagination-link" aria-label="Tapered Transmission Lines">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tapered Transmission Lines</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
