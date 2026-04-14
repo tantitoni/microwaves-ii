@@ -94,7 +94,17 @@
     "href": "chapters/04-broadband-matching.html",
     "title": "4  Broadband Matching",
     "section": "",
-    "text": "4.1 Tapered Transmission Line Impedance Matching\nWidth and \\(Z\\) are related — by continuously varying the width of the line, the characteristic impedance \\(Z(x)\\) transitions from \\(Z_0\\) to \\(Z_L\\).\nThis is the continuous limit of multisection matching: as \\(\\Delta\\ell \\to 0\\) and \\(N \\to \\infty\\), the staircase approximation becomes a smooth taper.\nThe smooth taper (tapered line) has total length \\(L\\), with \\(Z = f(\\ell)\\) varying continuously along the line.\nNotation:\nThe incremental reflection coefficient at position \\(x\\):\n\\[\\Gamma = \\frac{Z(x+dx) - Z(x)}{Z(x+dx) + Z(x)} = \\frac{Z(x) + dZ - Z(x)}{Z(x) + dZ + Z(x)} = \\frac{dZ}{2Z(x) + dZ}\\]\nFor small \\(dZ\\):\n\\[d\\Gamma = \\frac{dZ}{2Z(x)}\\]",
+    "text": "4.1 Theory of Small Reflections\nPerformance parameters (\\(S_{11}\\), \\(S_{21}\\), …) must stay within prescribed thresholds over a range of frequencies. The bandwidth of a network is defined from the frequency response of these parameters — the span over which they remain acceptable.\nConsider a cascade of transmission-line sections with different characteristic impedances \\(Z_{ch1}, Z_{ch2}, Z_{ch3}, \\dots\\) Each impedance step launches a partial reflection \\(\\Gamma_i\\). Provided each \\(|\\Gamma_i| \\ll 1\\), multiple reflections between interfaces can be neglected and the total input reflection is approximated by the sum of first-order reflections, each phase-shifted by its round-trip delay.\n\\[\\Gamma_{in} \\approx \\sum_{k} \\Gamma_k\\, e^{-j2\\beta x_k}\\]\nThis linearization underlies every broadband-matching technique that follows — quarter-wave multisection transformers, binomial and Chebyshev designs, and the continuous-limit tapered lines.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Broadband Matching</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/04-broadband-matching.html#theory-of-small-reflections",
+    "href": "chapters/04-broadband-matching.html#theory-of-small-reflections",
+    "title": "4  Broadband Matching",
+    "section": "",
+    "text": "Figure 4.1: Three-section cascade and its equivalent single-line representation with partial reflections \\(\\Gamma_1\\), \\(\\Gamma_2\\), \\(\\Gamma_3\\) at the interfaces.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Broadband Matching</span>"
     ]
@@ -103,8 +113,8 @@
     "objectID": "chapters/04-broadband-matching.html#tapered-transmission-line-impedance-matching",
     "href": "chapters/04-broadband-matching.html#tapered-transmission-line-impedance-matching",
     "title": "4  Broadband Matching",
-    "section": "",
-    "text": "Figure 4.1: Multisection staircase: \\(\\Delta\\ell \\to 0\\), \\(N \\to \\infty\\)\n\n\n\n\n\n\n\n\n\n\n\nFigure 4.2: Discrete case: \\(\\ell = \\lambda_0/4\\), \\(N=4\\) (Butterworth maximally flat)\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4.3: Tapered line: \\(w = f(\\ell)\\), total length \\(L\\)\n\n\n\n\n\n\n\\(x\\): position along the line\n\\(Z(x)\\): characteristic impedance at position \\(x\\)\n\\(Z(x=0) = Z_0\\), \\(Z(x=L) = Z_L\\), \\(L\\): total length\n\\(Z(x+dx) = Z(x) + dZ\\)",
+    "section": "4.2 Tapered Transmission Line Impedance Matching",
+    "text": "4.2 Tapered Transmission Line Impedance Matching\nWidth and \\(Z\\) are related — by continuously varying the width of the line, the characteristic impedance \\(Z(x)\\) transitions from \\(Z_0\\) to \\(Z_L\\).\nThis is the continuous limit of multisection matching: as \\(\\Delta\\ell \\to 0\\) and \\(N \\to \\infty\\), the staircase approximation becomes a smooth taper.\n\n\n\n\n\n\n\n\n\nFigure 4.2: Multisection staircase: \\(\\Delta\\ell \\to 0\\), \\(N \\to \\infty\\)\n\n\n\n\n\n\n\n\n\n\n\nFigure 4.3: Discrete case: \\(\\ell = \\lambda_0/4\\), \\(N=4\\) (Butterworth maximally flat)\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4.4: Tapered line: \\(w = f(\\ell)\\), total length \\(L\\)\n\n\n\nThe smooth taper (tapered line) has total length \\(L\\), with \\(Z = f(\\ell)\\) varying continuously along the line.\nNotation:\n\n\\(x\\): position along the line\n\\(Z(x)\\): characteristic impedance at position \\(x\\)\n\\(Z(x=0) = Z_0\\), \\(Z(x=L) = Z_L\\), \\(L\\): total length\n\\(Z(x+dx) = Z(x) + dZ\\)\n\nThe incremental reflection coefficient at position \\(x\\):\n\\[\\Gamma = \\frac{Z(x+dx) - Z(x)}{Z(x+dx) + Z(x)} = \\frac{Z(x) + dZ - Z(x)}{Z(x) + dZ + Z(x)} = \\frac{dZ}{2Z(x) + dZ}\\]\nFor small \\(dZ\\):\n\\[d\\Gamma = \\frac{dZ}{2Z(x)}\\]",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Broadband Matching</span>"
     ]
@@ -113,8 +123,8 @@
     "objectID": "chapters/04-broadband-matching.html#normalized-impedance",
     "href": "chapters/04-broadband-matching.html#normalized-impedance",
     "title": "4  Broadband Matching",
-    "section": "4.2 Normalized Impedance",
-    "text": "4.2 Normalized Impedance\nDefine the normalized impedance:\n\\[\\tilde{Z} \\triangleq \\frac{Z}{Z_0}, \\qquad \\tilde{Z}(x) = \\frac{Z(x)}{Z_0}, \\qquad \\tilde{Z}_L = \\frac{Z_L}{Z_0}, \\qquad \\tilde{Z}_0 = 1, \\qquad d\\tilde{Z} = \\frac{dZ}{Z_0}\\]\nThe incremental reflection coefficient becomes:\n\\[\\Gamma(x) = d\\Gamma = \\frac{dZ}{2Z + dZ} \\approx \\frac{1}{2}\\,\\frac{dZ}{Z} = \\frac{1}{2}\\,\\frac{d\\tilde{Z}}{\\tilde{Z}}\\]\n\\[d\\Gamma = \\frac{1}{2}\\,\\frac{d\\tilde{Z}}{\\tilde{Z}} = \\frac{1}{2}\\!\\left(\\frac{d}{dx}\\ln\\tilde{Z}\\right)\\! dx\\]",
+    "section": "4.3 Normalized Impedance",
+    "text": "4.3 Normalized Impedance\nDefine the normalized impedance:\n\\[\\tilde{Z} \\triangleq \\frac{Z}{Z_0}, \\qquad \\tilde{Z}(x) = \\frac{Z(x)}{Z_0}, \\qquad \\tilde{Z}_L = \\frac{Z_L}{Z_0}, \\qquad \\tilde{Z}_0 = 1, \\qquad d\\tilde{Z} = \\frac{dZ}{Z_0}\\]\nThe incremental reflection coefficient becomes:\n\\[\\Gamma(x) = d\\Gamma = \\frac{dZ}{2Z + dZ} \\approx \\frac{1}{2}\\,\\frac{dZ}{Z} = \\frac{1}{2}\\,\\frac{d\\tilde{Z}}{\\tilde{Z}}\\]\n\\[d\\Gamma = \\frac{1}{2}\\,\\frac{d\\tilde{Z}}{\\tilde{Z}} = \\frac{1}{2}\\!\\left(\\frac{d}{dx}\\ln\\tilde{Z}\\right)\\! dx\\]",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Broadband Matching</span>"
     ]
@@ -123,8 +133,8 @@
     "objectID": "chapters/04-broadband-matching.html#total-input-reflection",
     "href": "chapters/04-broadband-matching.html#total-input-reflection",
     "title": "4  Broadband Matching",
-    "section": "4.3 Total Input Reflection",
-    "text": "4.3 Total Input Reflection\n\\(d\\Gamma_{in}\\) is the effect of \\(d\\Gamma(x)\\) at the input (traveling back from \\(x\\) to \\(0\\)):\n\\[d\\Gamma_{in} = d\\Gamma \\cdot e^{-j2\\beta x}\\]\nSumming all incremental reflections along the line:\n\\[\\Gamma_{in} = \\sum_{k=1}^{\\infty} d\\Gamma_{in} = \\int_{x=0}^{L} d\\Gamma_{in} = \\int_{x=0}^{L} d\\Gamma \\cdot e^{-j2\\beta x} dx\\]\n\n\n\n\n\n\nFigure 4.4: Tapered line as a sum of incremental reflections.\n\n\n\n\n\n\n\n\n\nImportantApproximate \\(\\Gamma_{in}\\) of a tapered-line impedance tuner\n\n\n\n\\[\\Gamma_{in} \\simeq \\int_{x=0}^{L} \\frac{1}{2}\\, e^{-j2\\beta x}\\!\\left(\\frac{d}{dx}\\ln\\tilde{Z}\\right)\\! dx \\tag{4.1}\\]",
+    "section": "4.4 Total Input Reflection",
+    "text": "4.4 Total Input Reflection\n\\(d\\Gamma_{in}\\) is the effect of \\(d\\Gamma(x)\\) at the input (traveling back from \\(x\\) to \\(0\\)):\n\\[d\\Gamma_{in} = d\\Gamma \\cdot e^{-j2\\beta x}\\]\nSumming all incremental reflections along the line:\n\\[\\Gamma_{in} = \\sum_{k=1}^{\\infty} d\\Gamma_{in} = \\int_{x=0}^{L} d\\Gamma_{in} = \\int_{x=0}^{L} d\\Gamma \\cdot e^{-j2\\beta x} dx\\]\n\n\n\n\n\n\nFigure 4.5: Tapered line as a sum of incremental reflections.\n\n\n\n\n\n\n\n\n\nImportantApproximate \\(\\Gamma_{in}\\) of a tapered-line impedance tuner\n\n\n\n\\[\\Gamma_{in} \\simeq \\int_{x=0}^{L} \\frac{1}{2}\\, e^{-j2\\beta x}\\!\\left(\\frac{d}{dx}\\ln\\tilde{Z}\\right)\\! dx \\tag{4.1}\\]",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Broadband Matching</span>"
     ]
@@ -133,8 +143,8 @@
     "objectID": "chapters/04-broadband-matching.html#special-design-exponential-taper",
     "href": "chapters/04-broadband-matching.html#special-design-exponential-taper",
     "title": "4  Broadband Matching",
-    "section": "4.4 Special Design: Exponential Taper",
-    "text": "4.4 Special Design: Exponential Taper\nFor the exponential taper, the normalized impedance varies exponentially with position:\n\\[\\tilde{Z}(x) = e^{K x}, \\qquad K: \\text{ design parameter}\\]\nAt \\(x = L\\): \\(\\tilde{Z}(L) = \\tilde{Z}_L\\), giving:\n\\[e^{KL} = \\tilde{Z}_L \\quad \\Rightarrow \\quad K = \\frac{1}{L}\\ln\\tilde{Z}_L\\]\n\n\n\n\n\n\nFigure 4.5: Exponential taper: \\(Z \\propto 1/w\\), valid for \\(\\tilde{Z}_L &gt; 1\\).",
+    "section": "4.5 Special Design: Exponential Taper",
+    "text": "4.5 Special Design: Exponential Taper\nFor the exponential taper, the normalized impedance varies exponentially with position:\n\\[\\tilde{Z}(x) = e^{K x}, \\qquad K: \\text{ design parameter}\\]\nAt \\(x = L\\): \\(\\tilde{Z}(L) = \\tilde{Z}_L\\), giving:\n\\[e^{KL} = \\tilde{Z}_L \\quad \\Rightarrow \\quad K = \\frac{1}{L}\\ln\\tilde{Z}_L\\]\n\n\n\n\n\n\nFigure 4.6: Exponential taper: \\(Z \\propto 1/w\\), valid for \\(\\tilde{Z}_L &gt; 1\\).",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Broadband Matching</span>"
     ]
@@ -143,8 +153,8 @@
     "objectID": "chapters/04-broadband-matching.html#frequency-response-of-the-exponential-taper",
     "href": "chapters/04-broadband-matching.html#frequency-response-of-the-exponential-taper",
     "title": "4  Broadband Matching",
-    "section": "4.5 Frequency Response of the Exponential Taper",
-    "text": "4.5 Frequency Response of the Exponential Taper\nWith \\(\\tilde{Z}(x) = e^{Kx}\\) and \\(K = \\frac{1}{L}\\ln\\tilde{Z}_L\\):\n\\[\\frac{d}{dx}\\ln\\tilde{Z}(x) = K = \\frac{1}{L}\\ln\\tilde{Z}_L\\]\nSubstituting into Equation 4.1:\n\\[\\Gamma_{in} \\simeq \\int_{0}^{L} \\frac{1}{2}\\, e^{-j2\\beta x}\\!\\left(\\frac{1}{L}\\ln\\tilde{Z}_L\\right) dx = \\frac{\\ln\\tilde{Z}_L}{2L}\\int_{0}^{L} e^{-j2\\beta x}\\, dx\\]\nEvaluating the integral yields a sinc-shaped response:\n\\[\\Gamma_{in} \\simeq \\frac{1}{2}\\ln\\tilde{Z}_L \\cdot \\frac{\\sin\\beta L}{\\beta L}\\, e^{-j\\beta L}\\]\n\\[|\\Gamma_{in}| = \\frac{1}{2}\\ln\\tilde{Z}_L \\,\\left|\\frac{\\sin(\\omega L/v_p)}{\\omega L/v_p}\\right| \\tag{4.2}\\]\n\n\n\n\n\n\nFigure 4.6: Magnitude of \\(\\Gamma_{in}\\) vs. electrical length \\(\\theta = \\beta L = \\omega L/v_p\\) for the exponential taper.\n\n\n\n\n\n\n\n\n\nTipDesign procedure\n\n\n\nChoose a tolerable mismatch \\(\\Gamma_m\\) (e.g. \\(\\Gamma_m = 0.05\\) for a 50:100 \\(\\Omega\\) match). The corresponding \\(\\theta_m\\) is read from the response — pick the point on the right side of the main lobe so the passband extends upward in frequency. For a 4 GHz lower edge (6 ± 2 GHz band), \\(\\theta_m = \\omega_m L/v_p\\) fixes the required taper length \\(L\\).\n\n\n\n\nThe exponential taper is a high-pass matcher: below \\(\\theta_m\\) the mismatch grows, above it \\(|\\Gamma_{in}|\\) stays bounded by the sinc envelope.",
+    "section": "4.6 Frequency Response of the Exponential Taper",
+    "text": "4.6 Frequency Response of the Exponential Taper\nWith \\(\\tilde{Z}(x) = e^{Kx}\\) and \\(K = \\frac{1}{L}\\ln\\tilde{Z}_L\\):\n\\[\\frac{d}{dx}\\ln\\tilde{Z}(x) = K = \\frac{1}{L}\\ln\\tilde{Z}_L\\]\nSubstituting into Equation 4.1:\n\\[\\Gamma_{in} \\simeq \\int_{0}^{L} \\frac{1}{2}\\, e^{-j2\\beta x}\\!\\left(\\frac{1}{L}\\ln\\tilde{Z}_L\\right) dx = \\frac{\\ln\\tilde{Z}_L}{2L}\\int_{0}^{L} e^{-j2\\beta x}\\, dx\\]\nEvaluating the integral yields a sinc-shaped response:\n\\[\\Gamma_{in} \\simeq \\frac{1}{2}\\ln\\tilde{Z}_L \\cdot \\frac{\\sin\\beta L}{\\beta L}\\, e^{-j\\beta L}\\]\n\\[|\\Gamma_{in}| = \\frac{1}{2}\\ln\\tilde{Z}_L \\,\\left|\\frac{\\sin(\\omega L/v_p)}{\\omega L/v_p}\\right| \\tag{4.2}\\]\n\n\n\n\n\n\nFigure 4.7: Magnitude of \\(\\Gamma_{in}\\) vs. electrical length \\(\\theta = \\beta L = \\omega L/v_p\\) for the exponential taper.\n\n\n\n\n\n\n\n\n\nTipDesign procedure\n\n\n\nChoose a tolerable mismatch \\(\\Gamma_m\\) (e.g. \\(\\Gamma_m = 0.05\\) for a 50:100 \\(\\Omega\\) match). The corresponding \\(\\theta_m\\) is read from the response — pick the point on the right side of the main lobe so the passband extends upward in frequency. For a 4 GHz lower edge (6 ± 2 GHz band), \\(\\theta_m = \\omega_m L/v_p\\) fixes the required taper length \\(L\\).\n\n\n\n\nThe exponential taper is a high-pass matcher: below \\(\\theta_m\\) the mismatch grows, above it \\(|\\Gamma_{in}|\\) stays bounded by the sinc envelope.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Broadband Matching</span>"
     ]
@@ -153,8 +163,8 @@
     "objectID": "chapters/04-broadband-matching.html#triangular-taper",
     "href": "chapters/04-broadband-matching.html#triangular-taper",
     "title": "4  Broadband Matching",
-    "section": "4.6 Triangular Taper",
-    "text": "4.6 Triangular Taper\nInstead of a constant \\(d(\\ln\\tilde{Z})/dx\\), let the derivative ramp linearly up to \\(x=L/2\\) then back down to zero at \\(x=L\\):\n\\[\\frac{d}{dx}\\ln\\tilde{Z}(x) = \\begin{cases}\n\\dfrac{4}{L^{2}}\\,x\\,\\ln\\tilde{Z}_L, & 0 \\le x \\le L/2 \\\\[6pt]\n\\dfrac{4}{L^{2}}\\,(L-x)\\,\\ln\\tilde{Z}_L, & L/2 \\le x \\le L\n\\end{cases}\\]\n\n\n\n\n\n\nFigure 4.7: Triangular profile of \\(d(\\ln\\tilde{Z})/dx\\) along the taper.\n\n\n\nIntegrating gives a quadratic \\(\\ln\\tilde{Z}(x)\\):\n\\[\\tilde{Z}(x) = \\begin{cases}\n\\exp\\!\\left(\\dfrac{2x^{2}}{L^{2}}\\ln\\tilde{Z}_L\\right), & x \\in [0, L/2] \\\\[6pt]\n\\exp\\!\\left[\\left(1 - \\dfrac{2(L-x)^{2}}{L^{2}}\\right)\\ln\\tilde{Z}_L\\right], & x \\in [L/2, L]\n\\end{cases}\\]\nSubstituting into Equation 4.1 yields a squared-sinc response:\n\\[\\Gamma_{in} = \\frac{1}{2}\\,e^{-j\\beta L}\\,(\\ln\\tilde{Z}_L)\\!\\left(\\frac{\\sin(\\beta L/2)}{\\beta L/2}\\right)^{2} \\tag{4.3}\\]\n\n\nThe \\((\\sin x/x)^{2}\\) envelope suppresses sidelobes much faster than the plain sinc of the exponential taper — at the cost of a wider main lobe (i.e. a longer line for the same cutoff).",
+    "section": "4.7 Triangular Taper",
+    "text": "4.7 Triangular Taper\nInstead of a constant \\(d(\\ln\\tilde{Z})/dx\\), let the derivative ramp linearly up to \\(x=L/2\\) then back down to zero at \\(x=L\\):\n\\[\\frac{d}{dx}\\ln\\tilde{Z}(x) = \\begin{cases}\n\\dfrac{4}{L^{2}}\\,x\\,\\ln\\tilde{Z}_L, & 0 \\le x \\le L/2 \\\\[6pt]\n\\dfrac{4}{L^{2}}\\,(L-x)\\,\\ln\\tilde{Z}_L, & L/2 \\le x \\le L\n\\end{cases}\\]\n\n\n\n\n\n\nFigure 4.8: Triangular profile of \\(d(\\ln\\tilde{Z})/dx\\) along the taper.\n\n\n\nIntegrating gives a quadratic \\(\\ln\\tilde{Z}(x)\\):\n\\[\\tilde{Z}(x) = \\begin{cases}\n\\exp\\!\\left(\\dfrac{2x^{2}}{L^{2}}\\ln\\tilde{Z}_L\\right), & x \\in [0, L/2] \\\\[6pt]\n\\exp\\!\\left[\\left(1 - \\dfrac{2(L-x)^{2}}{L^{2}}\\right)\\ln\\tilde{Z}_L\\right], & x \\in [L/2, L]\n\\end{cases}\\]\nSubstituting into Equation 4.1 yields a squared-sinc response:\n\\[\\Gamma_{in} = \\frac{1}{2}\\,e^{-j\\beta L}\\,(\\ln\\tilde{Z}_L)\\!\\left(\\frac{\\sin(\\beta L/2)}{\\beta L/2}\\right)^{2} \\tag{4.3}\\]\n\n\nThe \\((\\sin x/x)^{2}\\) envelope suppresses sidelobes much faster than the plain sinc of the exponential taper — at the cost of a wider main lobe (i.e. a longer line for the same cutoff).",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Broadband Matching</span>"
     ]
@@ -163,8 +173,8 @@
     "objectID": "chapters/04-broadband-matching.html#klopfenstein-taper",
     "href": "chapters/04-broadband-matching.html#klopfenstein-taper",
     "title": "4  Broadband Matching",
-    "section": "4.7 Klopfenstein Taper",
-    "text": "4.7 Klopfenstein Taper\nThe Klopfenstein taper is the optimal profile: for a given maximum passband ripple \\(\\Gamma_m\\) it gives the shortest \\(L\\), or for a given \\(L\\) it gives the smallest \\(\\Gamma_m\\).\n\\[\\ln\\tilde{Z}(x) = \\frac{1}{2}\\ln\\tilde{Z}_L + \\frac{\\Gamma_0}{\\cosh A}\\, A^{2}\\, \\phi\\!\\left(\\frac{2x}{L}-1,\\,A\\right)\\]\nwith\n\\[A = \\operatorname{arccosh}\\!\\left(\\frac{\\Gamma_0}{\\Gamma_m}\\right), \\qquad\n\\Gamma_0 = \\frac{1}{2}\\ln\\tilde{Z}_L\\]\nand\n\\[\\phi(x, A) = \\int_{0}^{x} \\frac{I_{1}\\!\\left(A\\sqrt{1-y^{2}}\\right)}{A\\sqrt{1-y^{2}}}\\, dy\\]\nwhere \\(I_{1}\\) is the modified Bessel function of the first kind, order 1.\n\n\n\n\n\n\nNoteWhy Klopfenstein is optimal\n\n\n\nIts reflection magnitude is an equiripple Chebyshev response in the passband — analogous to how Chebyshev multisection matching improves on binomial (Butterworth) designs. The price is an impedance profile with step discontinuities at \\(x=0\\) and \\(x=L\\).",
+    "section": "4.8 Klopfenstein Taper",
+    "text": "4.8 Klopfenstein Taper\nThe Klopfenstein taper is the optimal profile: for a given maximum passband ripple \\(\\Gamma_m\\) it gives the shortest \\(L\\), or for a given \\(L\\) it gives the smallest \\(\\Gamma_m\\).\n\\[\\ln\\tilde{Z}(x) = \\frac{1}{2}\\ln\\tilde{Z}_L + \\frac{\\Gamma_0}{\\cosh A}\\, A^{2}\\, \\phi\\!\\left(\\frac{2x}{L}-1,\\,A\\right)\\]\nwith\n\\[A = \\operatorname{arccosh}\\!\\left(\\frac{\\Gamma_0}{\\Gamma_m}\\right), \\qquad\n\\Gamma_0 = \\frac{1}{2}\\ln\\tilde{Z}_L\\]\nand\n\\[\\phi(x, A) = \\int_{0}^{x} \\frac{I_{1}\\!\\left(A\\sqrt{1-y^{2}}\\right)}{A\\sqrt{1-y^{2}}}\\, dy\\]\nwhere \\(I_{1}\\) is the modified Bessel function of the first kind, order 1.\n\n\n\n\n\n\nNoteWhy Klopfenstein is optimal\n\n\n\nIts reflection magnitude is an equiripple Chebyshev response in the passband — analogous to how Chebyshev multisection matching improves on binomial (Butterworth) designs. The price is an impedance profile with step discontinuities at \\(x=0\\) and \\(x=L\\).",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Broadband Matching</span>"
     ]

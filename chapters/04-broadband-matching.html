@@ -210,13 +210,14 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#tapered-transmission-line-impedance-matching" id="toc-tapered-transmission-line-impedance-matching" class="nav-link active" data-scroll-target="#tapered-transmission-line-impedance-matching"><span class="header-section-number">4.1</span> Tapered Transmission Line Impedance Matching</a></li>
-  <li><a href="#normalized-impedance" id="toc-normalized-impedance" class="nav-link" data-scroll-target="#normalized-impedance"><span class="header-section-number">4.2</span> Normalized Impedance</a></li>
-  <li><a href="#total-input-reflection" id="toc-total-input-reflection" class="nav-link" data-scroll-target="#total-input-reflection"><span class="header-section-number">4.3</span> Total Input Reflection</a></li>
-  <li><a href="#special-design-exponential-taper" id="toc-special-design-exponential-taper" class="nav-link" data-scroll-target="#special-design-exponential-taper"><span class="header-section-number">4.4</span> Special Design: Exponential Taper</a></li>
-  <li><a href="#frequency-response-of-the-exponential-taper" id="toc-frequency-response-of-the-exponential-taper" class="nav-link" data-scroll-target="#frequency-response-of-the-exponential-taper"><span class="header-section-number">4.5</span> Frequency Response of the Exponential Taper</a></li>
-  <li><a href="#triangular-taper" id="toc-triangular-taper" class="nav-link" data-scroll-target="#triangular-taper"><span class="header-section-number">4.6</span> Triangular Taper</a></li>
-  <li><a href="#klopfenstein-taper" id="toc-klopfenstein-taper" class="nav-link" data-scroll-target="#klopfenstein-taper"><span class="header-section-number">4.7</span> Klopfenstein Taper</a></li>
+  <li><a href="#theory-of-small-reflections" id="toc-theory-of-small-reflections" class="nav-link active" data-scroll-target="#theory-of-small-reflections"><span class="header-section-number">4.1</span> Theory of Small Reflections</a></li>
+  <li><a href="#tapered-transmission-line-impedance-matching" id="toc-tapered-transmission-line-impedance-matching" class="nav-link" data-scroll-target="#tapered-transmission-line-impedance-matching"><span class="header-section-number">4.2</span> Tapered Transmission Line Impedance Matching</a></li>
+  <li><a href="#normalized-impedance" id="toc-normalized-impedance" class="nav-link" data-scroll-target="#normalized-impedance"><span class="header-section-number">4.3</span> Normalized Impedance</a></li>
+  <li><a href="#total-input-reflection" id="toc-total-input-reflection" class="nav-link" data-scroll-target="#total-input-reflection"><span class="header-section-number">4.4</span> Total Input Reflection</a></li>
+  <li><a href="#special-design-exponential-taper" id="toc-special-design-exponential-taper" class="nav-link" data-scroll-target="#special-design-exponential-taper"><span class="header-section-number">4.5</span> Special Design: Exponential Taper</a></li>
+  <li><a href="#frequency-response-of-the-exponential-taper" id="toc-frequency-response-of-the-exponential-taper" class="nav-link" data-scroll-target="#frequency-response-of-the-exponential-taper"><span class="header-section-number">4.6</span> Frequency Response of the Exponential Taper</a></li>
+  <li><a href="#triangular-taper" id="toc-triangular-taper" class="nav-link" data-scroll-target="#triangular-taper"><span class="header-section-number">4.7</span> Triangular Taper</a></li>
+  <li><a href="#klopfenstein-taper" id="toc-klopfenstein-taper" class="nav-link" data-scroll-target="#klopfenstein-taper"><span class="header-section-number">4.8</span> Klopfenstein Taper</a></li>
   </ul>
 </nav>
     </div>
@@ -242,8 +243,25 @@ window.Quarto = {
 </header>
 
 
-<section id="tapered-transmission-line-impedance-matching" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="tapered-transmission-line-impedance-matching"><span class="header-section-number">4.1</span> Tapered Transmission Line Impedance Matching</h2>
+<p>Performance parameters (<span class="math inline">\(S_{11}\)</span>, <span class="math inline">\(S_{21}\)</span>, …) must stay within prescribed thresholds over a range of frequencies. The <strong>bandwidth</strong> of a network is defined from the frequency response of these parameters — the span over which they remain acceptable.</p>
+<section id="theory-of-small-reflections" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="theory-of-small-reflections"><span class="header-section-number">4.1</span> Theory of Small Reflections</h2>
+<p>Consider a cascade of transmission-line sections with different characteristic impedances <span class="math inline">\(Z_{ch1}, Z_{ch2}, Z_{ch3}, \dots\)</span> Each impedance step launches a partial reflection <span class="math inline">\(\Gamma_i\)</span>. Provided each <span class="math inline">\(|\Gamma_i| \ll 1\)</span>, multiple reflections between interfaces can be neglected and the total input reflection is approximated by the <strong>sum of first-order reflections</strong>, each phase-shifted by its round-trip delay.</p>
+<div id="fig-small-refl" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-small-refl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/small-reflections-3section.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-small-refl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: Three-section cascade and its equivalent single-line representation with partial reflections <span class="math inline">\(\Gamma_1\)</span>, <span class="math inline">\(\Gamma_2\)</span>, <span class="math inline">\(\Gamma_3\)</span> at the interfaces.
+</figcaption>
+</figure>
+</div>
+<p><span class="math display">\[\Gamma_{in} \approx \sum_{k} \Gamma_k\, e^{-j2\beta x_k}\]</span></p>
+<p>This linearization underlies every broadband-matching technique that follows — quarter-wave multisection transformers, binomial and Chebyshev designs, and the continuous-limit tapered lines.</p>
+</section>
+<section id="tapered-transmission-line-impedance-matching" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="tapered-transmission-line-impedance-matching"><span class="header-section-number">4.2</span> Tapered Transmission Line Impedance Matching</h2>
 <p>Width and <span class="math inline">\(Z\)</span> are related — by continuously varying the width of the line, the characteristic impedance <span class="math inline">\(Z(x)\)</span> transitions from <span class="math inline">\(Z_0\)</span> to <span class="math inline">\(Z_L\)</span>.</p>
 <p>This is the continuous limit of multisection matching: as <span class="math inline">\(\Delta\ell \to 0\)</span> and <span class="math inline">\(N \to \infty\)</span>, the staircase approximation becomes a smooth taper.</p>
 <div class="quarto-layout-panel" data-layout="[50,50]">
@@ -255,7 +273,7 @@ window.Quarto = {
 <img src="../images/multisection-staircase.svg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-staircase-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.1: Multisection staircase: <span class="math inline">\(\Delta\ell \to 0\)</span>, <span class="math inline">\(N \to \infty\)</span>
+Figure&nbsp;4.2: Multisection staircase: <span class="math inline">\(\Delta\ell \to 0\)</span>, <span class="math inline">\(N \to \infty\)</span>
 </figcaption>
 </figure>
 </div>
@@ -267,7 +285,7 @@ Figure&nbsp;4.1: Multisection staircase: <span class="math inline">\(\Delta\ell 
 <img src="../images/multisection-N4.svg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-n4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.2: Discrete case: <span class="math inline">\(\ell = \lambda_0/4\)</span>, <span class="math inline">\(N=4\)</span> (Butterworth maximally flat)
+Figure&nbsp;4.3: Discrete case: <span class="math inline">\(\ell = \lambda_0/4\)</span>, <span class="math inline">\(N=4\)</span> (Butterworth maximally flat)
 </figcaption>
 </figure>
 </div>
@@ -280,7 +298,7 @@ Figure&nbsp;4.2: Discrete case: <span class="math inline">\(\ell = \lambda_0/4\)
 <img src="../images/tapered-line.svg" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tapered-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.3: Tapered line: <span class="math inline">\(w = f(\ell)\)</span>, total length <span class="math inline">\(L\)</span>
+Figure&nbsp;4.4: Tapered line: <span class="math inline">\(w = f(\ell)\)</span>, total length <span class="math inline">\(L\)</span>
 </figcaption>
 </figure>
 </div>
@@ -297,16 +315,16 @@ Figure&nbsp;4.3: Tapered line: <span class="math inline">\(w = f(\ell)\)</span>,
 <p>For small <span class="math inline">\(dZ\)</span>:</p>
 <p><span class="math display">\[d\Gamma = \frac{dZ}{2Z(x)}\]</span></p>
 </section>
-<section id="normalized-impedance" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="normalized-impedance"><span class="header-section-number">4.2</span> Normalized Impedance</h2>
+<section id="normalized-impedance" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="normalized-impedance"><span class="header-section-number">4.3</span> Normalized Impedance</h2>
 <p>Define the normalized impedance:</p>
 <p><span class="math display">\[\tilde{Z} \triangleq \frac{Z}{Z_0}, \qquad \tilde{Z}(x) = \frac{Z(x)}{Z_0}, \qquad \tilde{Z}_L = \frac{Z_L}{Z_0}, \qquad \tilde{Z}_0 = 1, \qquad d\tilde{Z} = \frac{dZ}{Z_0}\]</span></p>
 <p>The incremental reflection coefficient becomes:</p>
 <p><span class="math display">\[\Gamma(x) = d\Gamma = \frac{dZ}{2Z + dZ} \approx \frac{1}{2}\,\frac{dZ}{Z} = \frac{1}{2}\,\frac{d\tilde{Z}}{\tilde{Z}}\]</span></p>
 <p><span class="math display">\[d\Gamma = \frac{1}{2}\,\frac{d\tilde{Z}}{\tilde{Z}} = \frac{1}{2}\!\left(\frac{d}{dx}\ln\tilde{Z}\right)\! dx\]</span></p>
 </section>
-<section id="total-input-reflection" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="total-input-reflection"><span class="header-section-number">4.3</span> Total Input Reflection</h2>
+<section id="total-input-reflection" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="total-input-reflection"><span class="header-section-number">4.4</span> Total Input Reflection</h2>
 <p><span class="math inline">\(d\Gamma_{in}\)</span> is the effect of <span class="math inline">\(d\Gamma(x)\)</span> at the input (traveling back from <span class="math inline">\(x\)</span> to <span class="math inline">\(0\)</span>):</p>
 <p><span class="math display">\[d\Gamma_{in} = d\Gamma \cdot e^{-j2\beta x}\]</span></p>
 <p>Summing all incremental reflections along the line:</p>
@@ -317,7 +335,7 @@ Figure&nbsp;4.3: Tapered line: <span class="math inline">\(w = f(\ell)\)</span>,
 <img src="../images/tapered-field-lines.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tapered-field-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.4: Tapered line as a sum of incremental reflections.
+Figure&nbsp;4.5: Tapered line as a sum of incremental reflections.
 </figcaption>
 </figure>
 </div>
@@ -335,8 +353,8 @@ Figure&nbsp;4.4: Tapered line as a sum of incremental reflections.
 </div>
 </div>
 </section>
-<section id="special-design-exponential-taper" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="special-design-exponential-taper"><span class="header-section-number">4.4</span> Special Design: Exponential Taper</h2>
+<section id="special-design-exponential-taper" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="special-design-exponential-taper"><span class="header-section-number">4.5</span> Special Design: Exponential Taper</h2>
 <p>For the <strong>exponential taper</strong>, the normalized impedance varies exponentially with position:</p>
 <p><span class="math display">\[\tilde{Z}(x) = e^{K x}, \qquad K: \text{ design parameter}\]</span></p>
 <p>At <span class="math inline">\(x = L\)</span>: <span class="math inline">\(\tilde{Z}(L) = \tilde{Z}_L\)</span>, giving:</p>
@@ -347,13 +365,13 @@ Figure&nbsp;4.4: Tapered line as a sum of incremental reflections.
 <img src="../images/exponential-taper.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:35.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-exp-taper-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.5: Exponential taper: <span class="math inline">\(Z \propto 1/w\)</span>, valid for <span class="math inline">\(\tilde{Z}_L &gt; 1\)</span>.
+Figure&nbsp;4.6: Exponential taper: <span class="math inline">\(Z \propto 1/w\)</span>, valid for <span class="math inline">\(\tilde{Z}_L &gt; 1\)</span>.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="frequency-response-of-the-exponential-taper" class="level2 page-columns page-full" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="frequency-response-of-the-exponential-taper"><span class="header-section-number">4.5</span> Frequency Response of the Exponential Taper</h2>
+<section id="frequency-response-of-the-exponential-taper" class="level2 page-columns page-full" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="frequency-response-of-the-exponential-taper"><span class="header-section-number">4.6</span> Frequency Response of the Exponential Taper</h2>
 <p>With <span class="math inline">\(\tilde{Z}(x) = e^{Kx}\)</span> and <span class="math inline">\(K = \frac{1}{L}\ln\tilde{Z}_L\)</span>:</p>
 <p><span class="math display">\[\frac{d}{dx}\ln\tilde{Z}(x) = K = \frac{1}{L}\ln\tilde{Z}_L\]</span></p>
 <p>Substituting into <a href="#eq-tapered-gamma" class="quarto-xref">Equation&nbsp;<span>4.1</span></a>:</p>
@@ -367,7 +385,7 @@ Figure&nbsp;4.5: Exponential taper: <span class="math inline">\(Z \propto 1/w\)<
 <img src="../images/exp-taper-response.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-exp-response-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.6: Magnitude of <span class="math inline">\(\Gamma_{in}\)</span> vs.&nbsp;electrical length <span class="math inline">\(\theta = \beta L = \omega L/v_p\)</span> for the exponential taper.
+Figure&nbsp;4.7: Magnitude of <span class="math inline">\(\Gamma_{in}\)</span> vs.&nbsp;electrical length <span class="math inline">\(\theta = \beta L = \omega L/v_p\)</span> for the exponential taper.
 </figcaption>
 </figure>
 </div>
@@ -388,8 +406,8 @@ Figure&nbsp;4.6: Magnitude of <span class="math inline">\(\Gamma_{in}\)</span> v
 <div class="no-row-height column-margin column-container"><div class="">
 <p>The exponential taper is a high-pass matcher: below <span class="math inline">\(\theta_m\)</span> the mismatch grows, above it <span class="math inline">\(|\Gamma_{in}|\)</span> stays bounded by the sinc envelope.</p>
 </div></div></section>
-<section id="triangular-taper" class="level2 page-columns page-full" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="triangular-taper"><span class="header-section-number">4.6</span> Triangular Taper</h2>
+<section id="triangular-taper" class="level2 page-columns page-full" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="triangular-taper"><span class="header-section-number">4.7</span> Triangular Taper</h2>
 <p>Instead of a constant <span class="math inline">\(d(\ln\tilde{Z})/dx\)</span>, let the derivative ramp linearly up to <span class="math inline">\(x=L/2\)</span> then back down to zero at <span class="math inline">\(x=L\)</span>:</p>
 <p><span class="math display">\[\frac{d}{dx}\ln\tilde{Z}(x) = \begin{cases}
 \dfrac{4}{L^{2}}\,x\,\ln\tilde{Z}_L, &amp; 0 \le x \le L/2 \\[6pt]
@@ -401,7 +419,7 @@ Figure&nbsp;4.6: Magnitude of <span class="math inline">\(\Gamma_{in}\)</span> v
 <img src="../images/triangular-taper-deriv.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:35.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tri-deriv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.7: Triangular profile of <span class="math inline">\(d(\ln\tilde{Z})/dx\)</span> along the taper.
+Figure&nbsp;4.8: Triangular profile of <span class="math inline">\(d(\ln\tilde{Z})/dx\)</span> along the taper.
 </figcaption>
 </figure>
 </div>
@@ -416,8 +434,8 @@ Figure&nbsp;4.7: Triangular profile of <span class="math inline">\(d(\ln\tilde{Z
 <div class="no-row-height column-margin column-container"><div class="">
 <p>The <span class="math inline">\((\sin x/x)^{2}\)</span> envelope suppresses sidelobes much faster than the plain sinc of the exponential taper — at the cost of a wider main lobe (i.e.&nbsp;a longer line for the same cutoff).</p>
 </div></div></section>
-<section id="klopfenstein-taper" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="klopfenstein-taper"><span class="header-section-number">4.7</span> Klopfenstein Taper</h2>
+<section id="klopfenstein-taper" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="klopfenstein-taper"><span class="header-section-number">4.8</span> Klopfenstein Taper</h2>
 <p>The Klopfenstein taper is the <strong>optimal</strong> profile: for a given maximum passband ripple <span class="math inline">\(\Gamma_m\)</span> it gives the shortest <span class="math inline">\(L\)</span>, or for a given <span class="math inline">\(L\)</span> it gives the smallest <span class="math inline">\(\Gamma_m\)</span>.</p>
 <p><span class="math display">\[\ln\tilde{Z}(x) = \frac{1}{2}\ln\tilde{Z}_L + \frac{\Gamma_0}{\cosh A}\, A^{2}\, \phi\!\left(\frac{2x}{L}-1,\,A\right)\]</span></p>
 <p>with</p>
