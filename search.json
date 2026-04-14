@@ -92,261 +92,201 @@
   {
     "objectID": "chapters/04-broadband-matching.html",
     "href": "chapters/04-broadband-matching.html",
-    "title": "4  Broadband Matching Techniques and Theory of Small Reflections",
+    "title": "4  Broadband Matching",
     "section": "",
-    "text": "4.1 Theory of Small Reflections\nAdd your notes here.",
+    "text": "4.1 Tapered Transmission Line Impedance Matching\nWidth and \\(Z\\) are related — by continuously varying the width of the line, the characteristic impedance \\(Z(x)\\) transitions from \\(Z_0\\) to \\(Z_L\\).\nThis is the continuous limit of multisection matching: as \\(\\Delta\\ell \\to 0\\) and \\(N \\to \\infty\\), the staircase approximation becomes a smooth taper.\nThe smooth taper (tapered line) has total length \\(L\\), with \\(Z = f(\\ell)\\) varying continuously along the line.\nNotation:\nThe incremental reflection coefficient at position \\(x\\):\n\\[\\Gamma = \\frac{Z(x+dx) - Z(x)}{Z(x+dx) + Z(x)} = \\frac{Z(x) + dZ - Z(x)}{Z(x) + dZ + Z(x)} = \\frac{dZ}{2Z(x) + dZ}\\]\nFor small \\(dZ\\):\n\\[d\\Gamma = \\frac{dZ}{2Z(x)}\\]",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Broadband Matching Techniques and Theory of Small Reflections</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Broadband Matching</span>"
     ]
   },
   {
-    "objectID": "chapters/04-broadband-matching.html#broadband-matching",
-    "href": "chapters/04-broadband-matching.html#broadband-matching",
-    "title": "4  Broadband Matching Techniques and Theory of Small Reflections",
-    "section": "4.2 Broadband Matching",
-    "text": "4.2 Broadband Matching\nAdd your notes here.",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Broadband Matching Techniques and Theory of Small Reflections</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/05-quarter-wave-transformers.html",
-    "href": "chapters/05-quarter-wave-transformers.html",
-    "title": "5  Quarter-Wave Multisection Impedance Transformers",
+    "objectID": "chapters/04-broadband-matching.html#tapered-transmission-line-impedance-matching",
+    "href": "chapters/04-broadband-matching.html#tapered-transmission-line-impedance-matching",
+    "title": "4  Broadband Matching",
     "section": "",
-    "text": "5.1 Single Quarter-Wave Transformer\nAdd your notes here.",
+    "text": "Figure 4.1: Multisection staircase: \\(\\Delta\\ell \\to 0\\), \\(N \\to \\infty\\)\n\n\n\n\n\n\n\n\n\n\n\nFigure 4.2: Discrete case: \\(\\ell = \\lambda_0/4\\), \\(N=4\\) (Butterworth maximally flat)\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4.3: Tapered line: \\(w = f(\\ell)\\), total length \\(L\\)\n\n\n\n\n\n\n\\(x\\): position along the line\n\\(Z(x)\\): characteristic impedance at position \\(x\\)\n\\(Z(x=0) = Z_0\\), \\(Z(x=L) = Z_L\\), \\(L\\): total length\n\\(Z(x+dx) = Z(x) + dZ\\)",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Quarter-Wave Multisection Impedance Transformers</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Broadband Matching</span>"
     ]
   },
   {
-    "objectID": "chapters/05-quarter-wave-transformers.html#multisection-transformers",
-    "href": "chapters/05-quarter-wave-transformers.html#multisection-transformers",
-    "title": "5  Quarter-Wave Multisection Impedance Transformers",
-    "section": "5.2 Multisection Transformers",
-    "text": "5.2 Multisection Transformers\nAdd your notes here.",
+    "objectID": "chapters/04-broadband-matching.html#normalized-impedance",
+    "href": "chapters/04-broadband-matching.html#normalized-impedance",
+    "title": "4  Broadband Matching",
+    "section": "4.2 Normalized Impedance",
+    "text": "4.2 Normalized Impedance\nDefine the normalized impedance:\n\\[\\tilde{Z} \\triangleq \\frac{Z}{Z_0}, \\qquad \\tilde{Z}(x) = \\frac{Z(x)}{Z_0}, \\qquad \\tilde{Z}_L = \\frac{Z_L}{Z_0}, \\qquad \\tilde{Z}_0 = 1, \\qquad d\\tilde{Z} = \\frac{dZ}{Z_0}\\]\nThe incremental reflection coefficient becomes:\n\\[\\Gamma(x) = d\\Gamma = \\frac{dZ}{2Z + dZ} \\approx \\frac{1}{2}\\,\\frac{dZ}{Z} = \\frac{1}{2}\\,\\frac{d\\tilde{Z}}{\\tilde{Z}}\\]\n\\[d\\Gamma = \\frac{1}{2}\\,\\frac{d\\tilde{Z}}{\\tilde{Z}} = \\frac{1}{2}\\!\\left(\\frac{d}{dx}\\ln\\tilde{Z}\\right)\\! dx\\]",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Quarter-Wave Multisection Impedance Transformers</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Broadband Matching</span>"
     ]
   },
   {
-    "objectID": "chapters/05-quarter-wave-transformers.html#binomial-transformers",
-    "href": "chapters/05-quarter-wave-transformers.html#binomial-transformers",
-    "title": "5  Quarter-Wave Multisection Impedance Transformers",
-    "section": "5.3 Binomial Transformers",
-    "text": "5.3 Binomial Transformers\nAdd your notes here.",
+    "objectID": "chapters/04-broadband-matching.html#total-input-reflection",
+    "href": "chapters/04-broadband-matching.html#total-input-reflection",
+    "title": "4  Broadband Matching",
+    "section": "4.3 Total Input Reflection",
+    "text": "4.3 Total Input Reflection\n\\(d\\Gamma_{in}\\) is the effect of \\(d\\Gamma(x)\\) at the input (traveling back from \\(x\\) to \\(0\\)):\n\\[d\\Gamma_{in} = d\\Gamma \\cdot e^{-j2\\beta x}\\]\nSumming all incremental reflections along the line:\n\\[\\Gamma_{in} = \\sum_{k=1}^{\\infty} d\\Gamma_{in} = \\int_{x=0}^{L} d\\Gamma_{in} = \\int_{x=0}^{L} d\\Gamma \\cdot e^{-j2\\beta x} dx\\]\n\n\n\n\n\n\nFigure 4.4: Tapered line as a sum of incremental reflections.\n\n\n\n\n\n\n\n\n\nImportantApproximate \\(\\Gamma_{in}\\) of a tapered-line impedance tuner\n\n\n\n\\[\\Gamma_{in} \\simeq \\int_{x=0}^{L} \\frac{1}{2}\\, e^{-j2\\beta x}\\!\\left(\\frac{d}{dx}\\ln\\tilde{Z}\\right)\\! dx \\tag{4.1}\\]",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Quarter-Wave Multisection Impedance Transformers</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Broadband Matching</span>"
     ]
   },
   {
-    "objectID": "chapters/05-quarter-wave-transformers.html#chebyshev-transformers",
-    "href": "chapters/05-quarter-wave-transformers.html#chebyshev-transformers",
-    "title": "5  Quarter-Wave Multisection Impedance Transformers",
-    "section": "5.4 Chebyshev Transformers",
-    "text": "5.4 Chebyshev Transformers\nAdd your notes here.",
+    "objectID": "chapters/04-broadband-matching.html#special-design-exponential-taper",
+    "href": "chapters/04-broadband-matching.html#special-design-exponential-taper",
+    "title": "4  Broadband Matching",
+    "section": "4.4 Special Design: Exponential Taper",
+    "text": "4.4 Special Design: Exponential Taper\nFor the exponential taper, the normalized impedance varies exponentially with position:\n\\[\\tilde{Z}(x) = e^{K x}, \\qquad K: \\text{ design parameter}\\]\nAt \\(x = L\\): \\(\\tilde{Z}(L) = \\tilde{Z}_L\\), giving:\n\\[e^{KL} = \\tilde{Z}_L \\quad \\Rightarrow \\quad K = \\frac{1}{L}\\ln\\tilde{Z}_L\\]\n\n\n\n\n\n\nFigure 4.5: Exponential taper: \\(Z \\propto 1/w\\), valid for \\(\\tilde{Z}_L &gt; 1\\).",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Quarter-Wave Multisection Impedance Transformers</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Broadband Matching</span>"
     ]
   },
   {
-    "objectID": "chapters/06-tapered-lines.html",
-    "href": "chapters/06-tapered-lines.html",
-    "title": "6  Tapered Transmission Lines",
-    "section": "",
-    "text": "6.1 Tapered Transmission Line Impedance Matching\nWidth and \\(Z\\) are related — by continuously varying the width of the line, the characteristic impedance \\(Z(x)\\) transitions from \\(Z_0\\) to \\(Z_L\\).\nThis is the continuous limit of multisection matching: as \\(\\Delta\\ell \\to 0\\) and \\(N \\to \\infty\\), the staircase approximation becomes a smooth taper.\nThe smooth taper (tapered line) has total length \\(L\\), with \\(Z = f(\\ell)\\) varying continuously along the line.\nNotation:\nThe incremental reflection coefficient at position \\(x\\):\n\\[\\Gamma = \\frac{Z(x+dx) - Z(x)}{Z(x+dx) + Z(x)} = \\frac{Z(x) + dZ - Z(x)}{Z(x) + dZ + Z(x)} = \\frac{dZ}{2Z(x) + dZ}\\]\nFor small \\(dZ\\):\n\\[d\\Gamma = \\frac{dZ}{2Z(x)}\\]",
+    "objectID": "chapters/04-broadband-matching.html#frequency-response-of-the-exponential-taper",
+    "href": "chapters/04-broadband-matching.html#frequency-response-of-the-exponential-taper",
+    "title": "4  Broadband Matching",
+    "section": "4.5 Frequency Response of the Exponential Taper",
+    "text": "4.5 Frequency Response of the Exponential Taper\nWith \\(\\tilde{Z}(x) = e^{Kx}\\) and \\(K = \\frac{1}{L}\\ln\\tilde{Z}_L\\):\n\\[\\frac{d}{dx}\\ln\\tilde{Z}(x) = K = \\frac{1}{L}\\ln\\tilde{Z}_L\\]\nSubstituting into Equation 4.1:\n\\[\\Gamma_{in} \\simeq \\int_{0}^{L} \\frac{1}{2}\\, e^{-j2\\beta x}\\!\\left(\\frac{1}{L}\\ln\\tilde{Z}_L\\right) dx = \\frac{\\ln\\tilde{Z}_L}{2L}\\int_{0}^{L} e^{-j2\\beta x}\\, dx\\]\nEvaluating the integral yields a sinc-shaped response:\n\\[\\Gamma_{in} \\simeq \\frac{1}{2}\\ln\\tilde{Z}_L \\cdot \\frac{\\sin\\beta L}{\\beta L}\\, e^{-j\\beta L}\\]\n\\[|\\Gamma_{in}| = \\frac{1}{2}\\ln\\tilde{Z}_L \\,\\left|\\frac{\\sin(\\omega L/v_p)}{\\omega L/v_p}\\right| \\tag{4.2}\\]\n\n\n\n\n\n\nFigure 4.6: Magnitude of \\(\\Gamma_{in}\\) vs. electrical length \\(\\theta = \\beta L = \\omega L/v_p\\) for the exponential taper.\n\n\n\n\n\n\n\n\n\nTipDesign procedure\n\n\n\nChoose a tolerable mismatch \\(\\Gamma_m\\) (e.g. \\(\\Gamma_m = 0.05\\) for a 50:100 \\(\\Omega\\) match). The corresponding \\(\\theta_m\\) is read from the response — pick the point on the right side of the main lobe so the passband extends upward in frequency. For a 4 GHz lower edge (6 ± 2 GHz band), \\(\\theta_m = \\omega_m L/v_p\\) fixes the required taper length \\(L\\).\n\n\n\n\nThe exponential taper is a high-pass matcher: below \\(\\theta_m\\) the mismatch grows, above it \\(|\\Gamma_{in}|\\) stays bounded by the sinc envelope.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tapered Transmission Lines</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Broadband Matching</span>"
     ]
   },
   {
-    "objectID": "chapters/06-tapered-lines.html#tapered-transmission-line-impedance-matching",
-    "href": "chapters/06-tapered-lines.html#tapered-transmission-line-impedance-matching",
-    "title": "6  Tapered Transmission Lines",
-    "section": "",
-    "text": "Figure 6.1: Multisection staircase: \\(\\Delta\\ell \\to 0\\), \\(N \\to \\infty\\)\n\n\n\n\n\n\n\n\n\n\n\nFigure 6.2: Discrete case: \\(\\ell = \\lambda_0/4\\), \\(N=4\\) (Butterworth maximally flat)\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6.3: Tapered line: \\(w = f(\\ell)\\), total length \\(L\\)\n\n\n\n\n\n\n\\(x\\): position along the line\n\\(Z(x)\\): characteristic impedance at position \\(x\\)\n\\(Z(x=0) = Z_0\\), \\(Z(x=L) = Z_L\\), \\(L\\): total length\n\\(Z(x+dx) = Z(x) + dZ\\)",
+    "objectID": "chapters/04-broadband-matching.html#triangular-taper",
+    "href": "chapters/04-broadband-matching.html#triangular-taper",
+    "title": "4  Broadband Matching",
+    "section": "4.6 Triangular Taper",
+    "text": "4.6 Triangular Taper\nInstead of a constant \\(d(\\ln\\tilde{Z})/dx\\), let the derivative ramp linearly up to \\(x=L/2\\) then back down to zero at \\(x=L\\):\n\\[\\frac{d}{dx}\\ln\\tilde{Z}(x) = \\begin{cases}\n\\dfrac{4}{L^{2}}\\,x\\,\\ln\\tilde{Z}_L, & 0 \\le x \\le L/2 \\\\[6pt]\n\\dfrac{4}{L^{2}}\\,(L-x)\\,\\ln\\tilde{Z}_L, & L/2 \\le x \\le L\n\\end{cases}\\]\n\n\n\n\n\n\nFigure 4.7: Triangular profile of \\(d(\\ln\\tilde{Z})/dx\\) along the taper.\n\n\n\nIntegrating gives a quadratic \\(\\ln\\tilde{Z}(x)\\):\n\\[\\tilde{Z}(x) = \\begin{cases}\n\\exp\\!\\left(\\dfrac{2x^{2}}{L^{2}}\\ln\\tilde{Z}_L\\right), & x \\in [0, L/2] \\\\[6pt]\n\\exp\\!\\left[\\left(1 - \\dfrac{2(L-x)^{2}}{L^{2}}\\right)\\ln\\tilde{Z}_L\\right], & x \\in [L/2, L]\n\\end{cases}\\]\nSubstituting into Equation 4.1 yields a squared-sinc response:\n\\[\\Gamma_{in} = \\frac{1}{2}\\,e^{-j\\beta L}\\,(\\ln\\tilde{Z}_L)\\!\\left(\\frac{\\sin(\\beta L/2)}{\\beta L/2}\\right)^{2} \\tag{4.3}\\]\n\n\nThe \\((\\sin x/x)^{2}\\) envelope suppresses sidelobes much faster than the plain sinc of the exponential taper — at the cost of a wider main lobe (i.e. a longer line for the same cutoff).",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tapered Transmission Lines</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Broadband Matching</span>"
     ]
   },
   {
-    "objectID": "chapters/06-tapered-lines.html#normalized-impedance",
-    "href": "chapters/06-tapered-lines.html#normalized-impedance",
-    "title": "6  Tapered Transmission Lines",
-    "section": "6.2 Normalized Impedance",
-    "text": "6.2 Normalized Impedance\nDefine the normalized impedance:\n\\[\\tilde{Z} \\triangleq \\frac{Z}{Z_0}, \\qquad \\tilde{Z}(x) = \\frac{Z(x)}{Z_0}, \\qquad \\tilde{Z}_L = \\frac{Z_L}{Z_0}, \\qquad \\tilde{Z}_0 = 1, \\qquad d\\tilde{Z} = \\frac{dZ}{Z_0}\\]\nThe incremental reflection coefficient becomes:\n\\[\\Gamma(x) = d\\Gamma = \\frac{dZ}{2Z + dZ} \\approx \\frac{1}{2}\\,\\frac{dZ}{Z} = \\frac{1}{2}\\,\\frac{d\\tilde{Z}}{\\tilde{Z}}\\]\n\\[d\\Gamma = \\frac{1}{2}\\,\\frac{d\\tilde{Z}}{\\tilde{Z}} = \\frac{1}{2}\\!\\left(\\frac{d}{dx}\\ln\\tilde{Z}\\right)\\! dx\\]",
+    "objectID": "chapters/04-broadband-matching.html#klopfenstein-taper",
+    "href": "chapters/04-broadband-matching.html#klopfenstein-taper",
+    "title": "4  Broadband Matching",
+    "section": "4.7 Klopfenstein Taper",
+    "text": "4.7 Klopfenstein Taper\nThe Klopfenstein taper is the optimal profile: for a given maximum passband ripple \\(\\Gamma_m\\) it gives the shortest \\(L\\), or for a given \\(L\\) it gives the smallest \\(\\Gamma_m\\).\n\\[\\ln\\tilde{Z}(x) = \\frac{1}{2}\\ln\\tilde{Z}_L + \\frac{\\Gamma_0}{\\cosh A}\\, A^{2}\\, \\phi\\!\\left(\\frac{2x}{L}-1,\\,A\\right)\\]\nwith\n\\[A = \\operatorname{arccosh}\\!\\left(\\frac{\\Gamma_0}{\\Gamma_m}\\right), \\qquad\n\\Gamma_0 = \\frac{1}{2}\\ln\\tilde{Z}_L\\]\nand\n\\[\\phi(x, A) = \\int_{0}^{x} \\frac{I_{1}\\!\\left(A\\sqrt{1-y^{2}}\\right)}{A\\sqrt{1-y^{2}}}\\, dy\\]\nwhere \\(I_{1}\\) is the modified Bessel function of the first kind, order 1.\n\n\n\n\n\n\nNoteWhy Klopfenstein is optimal\n\n\n\nIts reflection magnitude is an equiripple Chebyshev response in the passband — analogous to how Chebyshev multisection matching improves on binomial (Butterworth) designs. The price is an impedance profile with step discontinuities at \\(x=0\\) and \\(x=L\\).",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tapered Transmission Lines</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/06-tapered-lines.html#total-input-reflection",
-    "href": "chapters/06-tapered-lines.html#total-input-reflection",
-    "title": "6  Tapered Transmission Lines",
-    "section": "6.3 Total Input Reflection",
-    "text": "6.3 Total Input Reflection\n\\(d\\Gamma_{in}\\) is the effect of \\(d\\Gamma(x)\\) at the input (traveling back from \\(x\\) to \\(0\\)):\n\\[d\\Gamma_{in} = d\\Gamma \\cdot e^{-j2\\beta x}\\]\nSumming all incremental reflections along the line:\n\\[\\Gamma_{in} = \\sum_{k=1}^{\\infty} d\\Gamma_{in} = \\int_{x=0}^{L} d\\Gamma_{in} = \\int_{x=0}^{L} d\\Gamma \\cdot e^{-j2\\beta x} dx\\]\n\n\n\n\n\n\nFigure 6.4: Tapered line as a sum of incremental reflections.\n\n\n\n\n\n\n\n\n\nImportantApproximate \\(\\Gamma_{in}\\) of a tapered-line impedance tuner\n\n\n\n\\[\\Gamma_{in} \\simeq \\int_{x=0}^{L} \\frac{1}{2}\\, e^{-j2\\beta x}\\!\\left(\\frac{d}{dx}\\ln\\tilde{Z}\\right)\\! dx \\tag{6.1}\\]",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tapered Transmission Lines</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/06-tapered-lines.html#special-design-exponential-taper",
-    "href": "chapters/06-tapered-lines.html#special-design-exponential-taper",
-    "title": "6  Tapered Transmission Lines",
-    "section": "6.4 Special Design: Exponential Taper",
-    "text": "6.4 Special Design: Exponential Taper\nFor the exponential taper, the normalized impedance varies exponentially with position:\n\\[\\tilde{Z}(x) = e^{K x}, \\qquad K: \\text{ design parameter}\\]\nAt \\(x = L\\): \\(\\tilde{Z}(L) = \\tilde{Z}_L\\), giving:\n\\[e^{KL} = \\tilde{Z}_L \\quad \\Rightarrow \\quad K = \\frac{1}{L}\\ln\\tilde{Z}_L\\]\n\n\n\n\n\n\nFigure 6.5: Exponential taper: \\(Z \\propto 1/w\\), valid for \\(\\tilde{Z}_L &gt; 1\\).",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tapered Transmission Lines</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/06-tapered-lines.html#frequency-response-of-the-exponential-taper",
-    "href": "chapters/06-tapered-lines.html#frequency-response-of-the-exponential-taper",
-    "title": "6  Tapered Transmission Lines",
-    "section": "6.5 Frequency Response of the Exponential Taper",
-    "text": "6.5 Frequency Response of the Exponential Taper\nWith \\(\\tilde{Z}(x) = e^{Kx}\\) and \\(K = \\frac{1}{L}\\ln\\tilde{Z}_L\\):\n\\[\\frac{d}{dx}\\ln\\tilde{Z}(x) = K = \\frac{1}{L}\\ln\\tilde{Z}_L\\]\nSubstituting into Equation 6.1:\n\\[\\Gamma_{in} \\simeq \\int_{0}^{L} \\frac{1}{2}\\, e^{-j2\\beta x}\\!\\left(\\frac{1}{L}\\ln\\tilde{Z}_L\\right) dx = \\frac{\\ln\\tilde{Z}_L}{2L}\\int_{0}^{L} e^{-j2\\beta x}\\, dx\\]\nEvaluating the integral yields a sinc-shaped response:\n\\[\\Gamma_{in} \\simeq \\frac{1}{2}\\ln\\tilde{Z}_L \\cdot \\frac{\\sin\\beta L}{\\beta L}\\, e^{-j\\beta L}\\]\n\\[|\\Gamma_{in}| = \\frac{1}{2}\\ln\\tilde{Z}_L \\,\\left|\\frac{\\sin(\\omega L/v_p)}{\\omega L/v_p}\\right| \\tag{6.2}\\]\n\n\n\n\n\n\nFigure 6.6: Magnitude of \\(\\Gamma_{in}\\) vs. electrical length \\(\\theta = \\beta L = \\omega L/v_p\\) for the exponential taper.\n\n\n\n\n\n\n\n\n\nTipDesign procedure\n\n\n\nChoose a tolerable mismatch \\(\\Gamma_m\\) (e.g. \\(\\Gamma_m = 0.05\\) for a 50:100 \\(\\Omega\\) match). The corresponding \\(\\theta_m\\) is read from the response — pick the point on the right side of the main lobe so the passband extends upward in frequency. For a 4 GHz lower edge (6 ± 2 GHz band), \\(\\theta_m = \\omega_m L/v_p\\) fixes the required taper length \\(L\\).\n\n\n\n\nThe exponential taper is a high-pass matcher: below \\(\\theta_m\\) the mismatch grows, above it \\(|\\Gamma_{in}|\\) stays bounded by the sinc envelope.",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tapered Transmission Lines</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/06-tapered-lines.html#triangular-taper",
-    "href": "chapters/06-tapered-lines.html#triangular-taper",
-    "title": "6  Tapered Transmission Lines",
-    "section": "6.6 Triangular Taper",
-    "text": "6.6 Triangular Taper\nInstead of a constant \\(d(\\ln\\tilde{Z})/dx\\), let the derivative ramp linearly up to \\(x=L/2\\) then back down to zero at \\(x=L\\):\n\\[\\frac{d}{dx}\\ln\\tilde{Z}(x) = \\begin{cases}\n\\dfrac{4}{L^{2}}\\,x\\,\\ln\\tilde{Z}_L, & 0 \\le x \\le L/2 \\\\[6pt]\n\\dfrac{4}{L^{2}}\\,(L-x)\\,\\ln\\tilde{Z}_L, & L/2 \\le x \\le L\n\\end{cases}\\]\n\n\n\n\n\n\nFigure 6.7: Triangular profile of \\(d(\\ln\\tilde{Z})/dx\\) along the taper.\n\n\n\nIntegrating gives a quadratic \\(\\ln\\tilde{Z}(x)\\):\n\\[\\tilde{Z}(x) = \\begin{cases}\n\\exp\\!\\left(\\dfrac{2x^{2}}{L^{2}}\\ln\\tilde{Z}_L\\right), & x \\in [0, L/2] \\\\[6pt]\n\\exp\\!\\left[\\left(1 - \\dfrac{2(L-x)^{2}}{L^{2}}\\right)\\ln\\tilde{Z}_L\\right], & x \\in [L/2, L]\n\\end{cases}\\]\nSubstituting into Equation 6.1 yields a squared-sinc response:\n\\[\\Gamma_{in} = \\frac{1}{2}\\,e^{-j\\beta L}\\,(\\ln\\tilde{Z}_L)\\!\\left(\\frac{\\sin(\\beta L/2)}{\\beta L/2}\\right)^{2} \\tag{6.3}\\]\n\n\nThe \\((\\sin x/x)^{2}\\) envelope suppresses sidelobes much faster than the plain sinc of the exponential taper — at the cost of a wider main lobe (i.e. a longer line for the same cutoff).",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tapered Transmission Lines</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/06-tapered-lines.html#klopfenstein-taper",
-    "href": "chapters/06-tapered-lines.html#klopfenstein-taper",
-    "title": "6  Tapered Transmission Lines",
-    "section": "6.7 Klopfenstein Taper",
-    "text": "6.7 Klopfenstein Taper\nThe Klopfenstein taper is the optimal profile: for a given maximum passband ripple \\(\\Gamma_m\\) it gives the shortest \\(L\\), or for a given \\(L\\) it gives the smallest \\(\\Gamma_m\\).\n\\[\\ln\\tilde{Z}(x) = \\frac{1}{2}\\ln\\tilde{Z}_L + \\frac{\\Gamma_0}{\\cosh A}\\, A^{2}\\, \\phi\\!\\left(\\frac{2x}{L}-1,\\,A\\right)\\]\nwith\n\\[A = \\operatorname{arccosh}\\!\\left(\\frac{\\Gamma_0}{\\Gamma_m}\\right), \\qquad\n\\Gamma_0 = \\frac{1}{2}\\ln\\tilde{Z}_L\\]\nand\n\\[\\phi(x, A) = \\int_{0}^{x} \\frac{I_{1}\\!\\left(A\\sqrt{1-y^{2}}\\right)}{A\\sqrt{1-y^{2}}}\\, dy\\]\nwhere \\(I_{1}\\) is the modified Bessel function of the first kind, order 1.\n\n\n\n\n\n\nNoteWhy Klopfenstein is optimal\n\n\n\nIts reflection magnitude is an equiripple Chebyshev response in the passband — analogous to how Chebyshev multisection matching improves on binomial (Butterworth) designs. The price is an impedance profile with step discontinuities at \\(x=0\\) and \\(x=L\\).",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Tapered Transmission Lines</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Broadband Matching</span>"
     ]
   },
   {
     "objectID": "chapters/07-cavities.html",
     "href": "chapters/07-cavities.html",
-    "title": "7  Cavities",
+    "title": "5  Cavities",
     "section": "",
-    "text": "7.1 Series and Parallel RLC Resonators\nIn certain cases high field selectivity is required. Various types of resonators can be used for this purpose.\nA series RLC resonator has impedance \\(Z_{in} = R + j\\omega L + \\frac{1}{j\\omega C}\\). \\(LC\\) determines \\(\\omega_0\\), \\(R\\) determines the dissipation factor.\nFor the parallel RLC resonator, \\(Y_{in} \\big|_{\\omega_0} \\in \\mathbb{R}\\), \\(\\omega_0 = \\frac{1}{\\sqrt{LC}}\\):\nThe resistive/dissipative elements affect the bandwidth, due to parasitics of \\(L\\) and \\(C\\). But there might be other dissipative factors.",
+    "text": "5.1 Series and Parallel RLC Resonators\nIn certain cases high field selectivity is required. Various types of resonators can be used for this purpose.\nA series RLC resonator has impedance \\(Z_{in} = R + j\\omega L + \\frac{1}{j\\omega C}\\). \\(LC\\) determines \\(\\omega_0\\), \\(R\\) determines the dissipation factor.\nFor the parallel RLC resonator, \\(Y_{in} \\big|_{\\omega_0} \\in \\mathbb{R}\\), \\(\\omega_0 = \\frac{1}{\\sqrt{LC}}\\):\nThe resistive/dissipative elements affect the bandwidth, due to parasitics of \\(L\\) and \\(C\\). But there might be other dissipative factors.",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Cavities</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Cavities</span>"
     ]
   },
   {
     "objectID": "chapters/07-cavities.html#series-and-parallel-rlc-resonators",
     "href": "chapters/07-cavities.html#series-and-parallel-rlc-resonators",
-    "title": "7  Cavities",
+    "title": "5  Cavities",
     "section": "",
-    "text": "Figure 7.1: Series RLC resonator.\n\n\n\n\n\n\\[Z_{in} \\big|_{\\omega_0} \\in \\mathbb{R} \\tag{7.1}\\]\nAt resonance, \\(W_m\\) and \\(W_e\\) will be equal and resonate between one form and the other:\n\\[\\omega_0^2 = \\frac{1}{LC} \\tag{7.2}\\]\n\\[W_m = \\frac{1}{2} L \\bar{I}^2, \\qquad W_e = \\frac{1}{2} C V^2\\]\n\n\n\n\n\n\n\n\n\n\nFigure 7.2: Parallel RLC resonator.\n\n\n\n\n\n\n\\(R\\) (or \\(G\\)) determines bandwidth; \\(L\\) and \\(C\\) set \\(\\omega_0\\). Real components have parasitic resistance, so \\(Q\\) is always finite.",
+    "text": "Figure 5.1: Series RLC resonator.\n\n\n\n\n\n\\[Z_{in} \\big|_{\\omega_0} \\in \\mathbb{R} \\tag{5.1}\\]\nAt resonance, \\(W_m\\) and \\(W_e\\) will be equal and resonate between one form and the other:\n\\[\\omega_0^2 = \\frac{1}{LC} \\tag{5.2}\\]\n\\[W_m = \\frac{1}{2} L \\bar{I}^2, \\qquad W_e = \\frac{1}{2} C V^2\\]\n\n\n\n\n\n\n\n\n\n\nFigure 5.2: Parallel RLC resonator.\n\n\n\n\n\n\n\\(R\\) (or \\(G\\)) determines bandwidth; \\(L\\) and \\(C\\) set \\(\\omega_0\\). Real components have parasitic resistance, so \\(Q\\) is always finite.",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Cavities</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Cavities</span>"
     ]
   },
   {
     "objectID": "chapters/07-cavities.html#cavity-electromagnetic-bulk-resonator",
     "href": "chapters/07-cavities.html#cavity-electromagnetic-bulk-resonator",
-    "title": "7  Cavities",
-    "section": "7.2 Cavity — Electromagnetic Bulk Resonator",
-    "text": "7.2 Cavity — Electromagnetic Bulk Resonator\nA cavity is an electromagnetic bulk resonator. e.g. a section of WR-90, PEC terminated at both ends — all faces of the prism are PEC.\n\n\n\n\n\n\nFigure 7.3: Rectangular cavity with dimensions \\(a\\), \\(b\\), \\(d\\) and \\(\\text{TE}_{10p}\\) standing wave.\n\n\n\nWR-90: \\(a = 0.9''\\), \\(b = 0.4''\\) \\(\\Rightarrow\\) \\(\\text{TE}_{10}\\) mode, for \\(\\omega &gt; \\omega_{c_{10}}\\).\n\n\nWR-90 is a standard rectangular waveguide band: 8.2–12.4 GHz (X-band).\n\\(d = ?\\) \\(\\rightarrow\\) for resonance: \\(d = p\\dfrac{\\lambda}{2}\\), giving modes \\(\\text{TE}_{10p}\\) (generally \\(\\text{TE}_{nmp}\\)).\n\\(\\therefore\\) \\(\\omega_{nmp}\\) are discrete frequencies.\n\n\n\n\n\n\nImportantQ Factor\n\n\n\n\\[Q = \\frac{W_s}{P_d} \\cdot \\omega_0 = \\frac{\\omega_0}{\\Delta\\omega} \\tag{7.3}\\]\n\n\ne.g. cavity wavemeter (cylindrical waveguide) — \\(d\\) is tunable.\ne.g. dielectric resonator oscillator (DRO) — small disc of high \\(\\varepsilon_r\\) material (\\(\\varepsilon_r \\sim 100\\)). No PEC, all dielectric. The field \\(|E|\\) is confined inside the disc and decays rapidly with radius \\(r\\).\n\n\nDROs are widely used in oscillator circuits due to their high \\(Q\\), small size, and temperature stability.",
+    "title": "5  Cavities",
+    "section": "5.2 Cavity — Electromagnetic Bulk Resonator",
+    "text": "5.2 Cavity — Electromagnetic Bulk Resonator\nA cavity is an electromagnetic bulk resonator. e.g. a section of WR-90, PEC terminated at both ends — all faces of the prism are PEC.\n\n\n\n\n\n\nFigure 5.3: Rectangular cavity with dimensions \\(a\\), \\(b\\), \\(d\\) and \\(\\text{TE}_{10p}\\) standing wave.\n\n\n\nWR-90: \\(a = 0.9''\\), \\(b = 0.4''\\) \\(\\Rightarrow\\) \\(\\text{TE}_{10}\\) mode, for \\(\\omega &gt; \\omega_{c_{10}}\\).\n\n\nWR-90 is a standard rectangular waveguide band: 8.2–12.4 GHz (X-band).\n\\(d = ?\\) \\(\\rightarrow\\) for resonance: \\(d = p\\dfrac{\\lambda}{2}\\), giving modes \\(\\text{TE}_{10p}\\) (generally \\(\\text{TE}_{nmp}\\)).\n\\(\\therefore\\) \\(\\omega_{nmp}\\) are discrete frequencies.\n\n\n\n\n\n\nImportantQ Factor\n\n\n\n\\[Q = \\frac{W_s}{P_d} \\cdot \\omega_0 = \\frac{\\omega_0}{\\Delta\\omega} \\tag{5.3}\\]\n\n\ne.g. cavity wavemeter (cylindrical waveguide) — \\(d\\) is tunable.\ne.g. dielectric resonator oscillator (DRO) — small disc of high \\(\\varepsilon_r\\) material (\\(\\varepsilon_r \\sim 100\\)). No PEC, all dielectric. The field \\(|E|\\) is confined inside the disc and decays rapidly with radius \\(r\\).\n\n\nDROs are widely used in oscillator circuits due to their high \\(Q\\), small size, and temperature stability.",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Cavities</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Cavities</span>"
     ]
   },
   {
     "objectID": "chapters/07-cavities.html#field-analysis",
     "href": "chapters/07-cavities.html#field-analysis",
-    "title": "7  Cavities",
-    "section": "7.3 Field Analysis",
-    "text": "7.3 Field Analysis\nWe will consider a PEC wall RWG. Nevertheless this analysis method is applicable to any type. Consider a WG section with cross section dimensions \\(a\\), \\(b\\) (see Figure 7.3).\nFor \\(\\text{TE}_{nm}\\) modes, the fields are:\n\\[H_{z,nm} = A_{nm} \\cos\\!\\left(\\frac{n\\pi}{a}x\\right)\\cos\\!\\left(\\frac{m\\pi}{b}y\\right) e^{\\mp j\\beta_{nm} z} \\tag{7.4}\\]\nwhere \\(+z\\) is forward propagation and \\(-z\\) is backward propagation.\n\\[H_{x,nm} = \\mp j\\,\\frac{\\beta_{nm}}{k_{c_{nm}}^2}\\cdot A_{nm}\\frac{n\\pi}{a}\\sin\\!\\left(\\frac{n\\pi}{a}x\\right)\\cos\\!\\left(\\frac{m\\pi}{b}y\\right)e^{\\mp j\\beta_{nm}z} \\tag{7.5}\\]\n\\[H_{y,nm} = \\mp j\\,\\frac{\\beta_{nm}}{k_{c_{nm}}^2}\\cdot A_{nm}\\frac{m\\pi}{b}\\cos\\!\\left(\\frac{n\\pi}{a}x\\right)\\sin\\!\\left(\\frac{m\\pi}{b}y\\right)e^{\\mp j\\beta_{nm}z} \\tag{7.6}\\]\nThe dominant mode is \\(\\text{TE}_{10}\\):\n\\[H_{z,10} = A_{10}\\cos\\!\\left(\\frac{\\pi}{a}x\\right)e^{\\mp j\\beta_{10}z}\\]\nIn the cavity there will be \\(+\\) and \\(-\\) propagating waves:\n\\[H_z = H_1\\cos\\!\\left(\\frac{\\pi}{a}x\\right)e^{+j\\beta_{10}z} + H_2\\cos\\!\\left(\\frac{\\pi}{a}x\\right)e^{-j\\beta_{10}z}\\]\n\\[H_y = 0\\]\n\\[H_x = j\\frac{\\beta_{10}}{k_{c_{10}}^2}\\cdot\\frac{\\pi}{a}\\left(H_1 e^{+j\\beta_{10}z} - H_2\\, e^{-j\\beta_{10}z}\\right)\\sin\\!\\left(\\frac{\\pi}{a}x\\right)\\]\n\\[k_{c_{10}} = \\frac{\\pi}{a}\\]\nThe wave impedance relation gives:\n\\[\\frac{E_y}{H_x} = -Z_{\\text{TE}} = -\\frac{k}{\\beta}\\,Z_0\\]\n\\[E_y = -jk_0\\,\\frac{a}{\\pi}\\,Z_0\\left(H_1 e^{+j\\beta_{10}z} + H_2 e^{-j\\beta_{10}z}\\right)\\]\n\\(H_1\\) and \\(H_2\\) are unknowns. Consider a section of length \\(d\\). At \\(z=0\\) and \\(z=d\\), PEC boundary conditions must be satisfied:\n\\[E_y(z=0) = 0, \\qquad E_y(z=d) = 0 \\quad \\Leftrightarrow \\quad \\hat{a}_n \\times \\mathbf{H}\\big|_{z=0,d} = 0\\]\nAt \\(z=0\\): \\(\\hat{a}_n = +\\hat{a}_z\\), so \\(H_z(z=0) = H_1 + H_2 = 0 \\Rightarrow H_1 = -H_2\\)\nAt \\(z=d\\): \\(\\hat{a}_n = -\\hat{a}_z\\)\n\\[H_1\\, e^{+j\\beta_{10}d} + H_2\\, e^{-j\\beta_{10}d} = 0\\]\n\\[H_1\\!\\left(e^{+j\\beta_{10}d} - e^{-j\\beta_{10}d}\\right) = 0\\]\n\\[-2j\\,H_1\\sin\\beta_{10}d = 0 \\quad \\Rightarrow \\quad \\beta_{10}d = p\\pi, \\quad p = 1, 2, 3, \\ldots\\]\nSince \\(\\beta = \\dfrac{2\\pi}{\\lambda_g}\\):\n\n\n\n\n\n\nNoteResonance Condition\n\n\n\n\\[d = p\\,\\frac{\\lambda_g}{2}, \\quad p = 1,2,3,\\ldots \\tag{7.7}\\]\n\n\nFrom the dispersion relation \\(\\beta^2 = k^2 - k_c^2\\):\n\\[\\beta_{nm}^2 = \\omega^2\\mu_0\\varepsilon_0 - \\left(\\frac{n\\pi}{a}\\right)^2 - \\left(\\frac{m\\pi}{b}\\right)^2 = \\left(\\frac{p\\pi}{d}\\right)^2\\]\nSetting \\(\\beta_{nm} = p\\pi/d\\) and solving for the resonant frequency:\n\n\n\n\n\n\nImportantResonant Frequencies\n\n\n\n\\[\\omega_0^2\\mu_0\\varepsilon_0 = \\left(\\frac{n\\pi}{a}\\right)^2 + \\left(\\frac{m\\pi}{b}\\right)^2 + \\left(\\frac{p\\pi}{d}\\right)^2 \\quad \\Rightarrow \\quad \\omega_{nmp} \\tag{7.8}\\]\n\n\nConvention: \\(d &gt; a &gt; b\\), so \\(\\text{TE}_{101}\\) is the dominant mode — the lowest resonant frequency for a PEC RWG cavity.\n\n\nChoosing \\(d &gt; a &gt; b\\) ensures \\(\\text{TE}_{101}\\) has the lowest \\(\\omega_{nmp}\\), giving a clean single-mode operation near resonance.\n\n\n\n\n\n\nFigure 7.4: Discrete resonant frequencies of a rectangular cavity.\n\n\n\nAs seen in Figure 7.4, \\(\\omega_{101}\\) is the lowest resonant frequency, with higher-order modes \\(\\omega_{nmp}\\) following at discrete intervals.\n\nSwapping \\(a\\), \\(b\\), \\(d\\) changes nothing physically — only the labelling of modes.",
+    "title": "5  Cavities",
+    "section": "5.3 Field Analysis",
+    "text": "5.3 Field Analysis\nWe will consider a PEC wall RWG. Nevertheless this analysis method is applicable to any type. Consider a WG section with cross section dimensions \\(a\\), \\(b\\) (see Figure 5.3).\nFor \\(\\text{TE}_{nm}\\) modes, the fields are:\n\\[H_{z,nm} = A_{nm} \\cos\\!\\left(\\frac{n\\pi}{a}x\\right)\\cos\\!\\left(\\frac{m\\pi}{b}y\\right) e^{\\mp j\\beta_{nm} z} \\tag{5.4}\\]\nwhere \\(+z\\) is forward propagation and \\(-z\\) is backward propagation.\n\\[H_{x,nm} = \\mp j\\,\\frac{\\beta_{nm}}{k_{c_{nm}}^2}\\cdot A_{nm}\\frac{n\\pi}{a}\\sin\\!\\left(\\frac{n\\pi}{a}x\\right)\\cos\\!\\left(\\frac{m\\pi}{b}y\\right)e^{\\mp j\\beta_{nm}z} \\tag{5.5}\\]\n\\[H_{y,nm} = \\mp j\\,\\frac{\\beta_{nm}}{k_{c_{nm}}^2}\\cdot A_{nm}\\frac{m\\pi}{b}\\cos\\!\\left(\\frac{n\\pi}{a}x\\right)\\sin\\!\\left(\\frac{m\\pi}{b}y\\right)e^{\\mp j\\beta_{nm}z} \\tag{5.6}\\]\nThe dominant mode is \\(\\text{TE}_{10}\\):\n\\[H_{z,10} = A_{10}\\cos\\!\\left(\\frac{\\pi}{a}x\\right)e^{\\mp j\\beta_{10}z}\\]\nIn the cavity there will be \\(+\\) and \\(-\\) propagating waves:\n\\[H_z = H_1\\cos\\!\\left(\\frac{\\pi}{a}x\\right)e^{+j\\beta_{10}z} + H_2\\cos\\!\\left(\\frac{\\pi}{a}x\\right)e^{-j\\beta_{10}z}\\]\n\\[H_y = 0\\]\n\\[H_x = j\\frac{\\beta_{10}}{k_{c_{10}}^2}\\cdot\\frac{\\pi}{a}\\left(H_1 e^{+j\\beta_{10}z} - H_2\\, e^{-j\\beta_{10}z}\\right)\\sin\\!\\left(\\frac{\\pi}{a}x\\right)\\]\n\\[k_{c_{10}} = \\frac{\\pi}{a}\\]\nThe wave impedance relation gives:\n\\[\\frac{E_y}{H_x} = -Z_{\\text{TE}} = -\\frac{k}{\\beta}\\,Z_0\\]\n\\[E_y = -jk_0\\,\\frac{a}{\\pi}\\,Z_0\\left(H_1 e^{+j\\beta_{10}z} + H_2 e^{-j\\beta_{10}z}\\right)\\]\n\\(H_1\\) and \\(H_2\\) are unknowns. Consider a section of length \\(d\\). At \\(z=0\\) and \\(z=d\\), PEC boundary conditions must be satisfied:\n\\[E_y(z=0) = 0, \\qquad E_y(z=d) = 0 \\quad \\Leftrightarrow \\quad \\hat{a}_n \\times \\mathbf{H}\\big|_{z=0,d} = 0\\]\nAt \\(z=0\\): \\(\\hat{a}_n = +\\hat{a}_z\\), so \\(H_z(z=0) = H_1 + H_2 = 0 \\Rightarrow H_1 = -H_2\\)\nAt \\(z=d\\): \\(\\hat{a}_n = -\\hat{a}_z\\)\n\\[H_1\\, e^{+j\\beta_{10}d} + H_2\\, e^{-j\\beta_{10}d} = 0\\]\n\\[H_1\\!\\left(e^{+j\\beta_{10}d} - e^{-j\\beta_{10}d}\\right) = 0\\]\n\\[-2j\\,H_1\\sin\\beta_{10}d = 0 \\quad \\Rightarrow \\quad \\beta_{10}d = p\\pi, \\quad p = 1, 2, 3, \\ldots\\]\nSince \\(\\beta = \\dfrac{2\\pi}{\\lambda_g}\\):\n\n\n\n\n\n\nNoteResonance Condition\n\n\n\n\\[d = p\\,\\frac{\\lambda_g}{2}, \\quad p = 1,2,3,\\ldots \\tag{5.7}\\]\n\n\nFrom the dispersion relation \\(\\beta^2 = k^2 - k_c^2\\):\n\\[\\beta_{nm}^2 = \\omega^2\\mu_0\\varepsilon_0 - \\left(\\frac{n\\pi}{a}\\right)^2 - \\left(\\frac{m\\pi}{b}\\right)^2 = \\left(\\frac{p\\pi}{d}\\right)^2\\]\nSetting \\(\\beta_{nm} = p\\pi/d\\) and solving for the resonant frequency:\n\n\n\n\n\n\nImportantResonant Frequencies\n\n\n\n\\[\\omega_0^2\\mu_0\\varepsilon_0 = \\left(\\frac{n\\pi}{a}\\right)^2 + \\left(\\frac{m\\pi}{b}\\right)^2 + \\left(\\frac{p\\pi}{d}\\right)^2 \\quad \\Rightarrow \\quad \\omega_{nmp} \\tag{5.8}\\]\n\n\nConvention: \\(d &gt; a &gt; b\\), so \\(\\text{TE}_{101}\\) is the dominant mode — the lowest resonant frequency for a PEC RWG cavity.\n\n\nChoosing \\(d &gt; a &gt; b\\) ensures \\(\\text{TE}_{101}\\) has the lowest \\(\\omega_{nmp}\\), giving a clean single-mode operation near resonance.\n\n\n\n\n\n\nFigure 5.4: Discrete resonant frequencies of a rectangular cavity.\n\n\n\nAs seen in Figure 5.4, \\(\\omega_{101}\\) is the lowest resonant frequency, with higher-order modes \\(\\omega_{nmp}\\) following at discrete intervals.\n\nSwapping \\(a\\), \\(b\\), \\(d\\) changes nothing physically — only the labelling of modes.",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Cavities</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Cavities</span>"
     ]
   },
   {
     "objectID": "chapters/08-filter-design.html",
     "href": "chapters/08-filter-design.html",
-    "title": "8  General Filter Design from Prototype",
+    "title": "6  General Filter Design from Prototype",
     "section": "",
-    "text": "8.1 Low-Pass Prototype\nAdd your notes here.",
+    "text": "6.1 Low-Pass Prototype\nAdd your notes here.",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>General Filter Design from Prototype</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>General Filter Design from Prototype</span>"
     ]
   },
   {
     "objectID": "chapters/08-filter-design.html#filter-transformations",
     "href": "chapters/08-filter-design.html#filter-transformations",
-    "title": "8  General Filter Design from Prototype",
-    "section": "8.2 Filter Transformations",
-    "text": "8.2 Filter Transformations\nAdd your notes here.",
+    "title": "6  General Filter Design from Prototype",
+    "section": "6.2 Filter Transformations",
+    "text": "6.2 Filter Transformations\nAdd your notes here.",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>General Filter Design from Prototype</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>General Filter Design from Prototype</span>"
     ]
   },
   {
     "objectID": "chapters/08-filter-design.html#butterworth-and-chebyshev-responses",
     "href": "chapters/08-filter-design.html#butterworth-and-chebyshev-responses",
-    "title": "8  General Filter Design from Prototype",
-    "section": "8.3 Butterworth and Chebyshev Responses",
-    "text": "8.3 Butterworth and Chebyshev Responses\nAdd your notes here.",
+    "title": "6  General Filter Design from Prototype",
+    "section": "6.3 Butterworth and Chebyshev Responses",
+    "text": "6.3 Butterworth and Chebyshev Responses\nAdd your notes here.",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>General Filter Design from Prototype</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>General Filter Design from Prototype</span>"
     ]
   },
   {
     "objectID": "chapters/09-transmission-line-filters.html",
     "href": "chapters/09-transmission-line-filters.html",
-    "title": "9  Transmission Line Filters, Coupled Line Filters, Cavity Coupled Filters",
+    "title": "7  Transmission Line Filters, Coupled Line Filters, Cavity Coupled Filters",
     "section": "",
-    "text": "9.1 Transmission Line Filters\nAdd your notes here.",
+    "text": "7.1 Transmission Line Filters\nAdd your notes here.",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Transmission Line Filters, Coupled Line Filters, Cavity Coupled Filters</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Transmission Line Filters, Coupled Line Filters, Cavity Coupled Filters</span>"
     ]
   },
   {
     "objectID": "chapters/09-transmission-line-filters.html#coupled-line-filters",
     "href": "chapters/09-transmission-line-filters.html#coupled-line-filters",
-    "title": "9  Transmission Line Filters, Coupled Line Filters, Cavity Coupled Filters",
-    "section": "9.2 Coupled Line Filters",
-    "text": "9.2 Coupled Line Filters\nAdd your notes here.",
+    "title": "7  Transmission Line Filters, Coupled Line Filters, Cavity Coupled Filters",
+    "section": "7.2 Coupled Line Filters",
+    "text": "7.2 Coupled Line Filters\nAdd your notes here.",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Transmission Line Filters, Coupled Line Filters, Cavity Coupled Filters</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Transmission Line Filters, Coupled Line Filters, Cavity Coupled Filters</span>"
     ]
   },
   {
     "objectID": "chapters/09-transmission-line-filters.html#cavity-coupled-filters",
     "href": "chapters/09-transmission-line-filters.html#cavity-coupled-filters",
-    "title": "9  Transmission Line Filters, Coupled Line Filters, Cavity Coupled Filters",
-    "section": "9.3 Cavity Coupled Filters",
-    "text": "9.3 Cavity Coupled Filters\nAdd your notes here.",
+    "title": "7  Transmission Line Filters, Coupled Line Filters, Cavity Coupled Filters",
+    "section": "7.3 Cavity Coupled Filters",
+    "text": "7.3 Cavity Coupled Filters\nAdd your notes here.",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Transmission Line Filters, Coupled Line Filters, Cavity Coupled Filters</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Transmission Line Filters, Coupled Line Filters, Cavity Coupled Filters</span>"
     ]
   },
   {
     "objectID": "chapters/10-microwave-devices.html",
     "href": "chapters/10-microwave-devices.html",
-    "title": "10  Introduction to Active and Passive Microwave Semiconductor Devices",
+    "title": "8  Introduction to Active and Passive Microwave Semiconductor Devices",
     "section": "",
-    "text": "10.1 Passive Devices\nAdd your notes here.",
+    "text": "8.1 Passive Devices\nAdd your notes here.",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Introduction to Active and Passive Microwave Semiconductor Devices</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Introduction to Active and Passive Microwave Semiconductor Devices</span>"
     ]
   },
   {
     "objectID": "chapters/10-microwave-devices.html#active-devices",
     "href": "chapters/10-microwave-devices.html#active-devices",
-    "title": "10  Introduction to Active and Passive Microwave Semiconductor Devices",
-    "section": "10.2 Active Devices",
-    "text": "10.2 Active Devices\nAdd your notes here.",
+    "title": "8  Introduction to Active and Passive Microwave Semiconductor Devices",
+    "section": "8.2 Active Devices",
+    "text": "8.2 Active Devices\nAdd your notes here.",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Introduction to Active and Passive Microwave Semiconductor Devices</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Introduction to Active and Passive Microwave Semiconductor Devices</span>"
     ]
   }
 ]

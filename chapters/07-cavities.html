@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Cavities – EE 428 Microwaves II</title>
+<title>5&nbsp; Cavities – EE 428 Microwaves II</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,7 +34,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../chapters/08-filter-design.html" rel="next">
-<link href="../chapters/06-tapered-lines.html" rel="prev">
+<link href="../chapters/04-broadband-matching.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -115,7 +115,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/07-cavities.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Cavities</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/07-cavities.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cavities</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -167,43 +167,31 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/04-broadband-matching.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Broadband Matching Techniques and Theory of Small Reflections</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/05-quarter-wave-transformers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quarter-Wave Multisection Impedance Transformers</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/06-tapered-lines.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tapered Transmission Lines</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Broadband Matching</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/07-cavities.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Cavities</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cavities</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/08-filter-design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">General Filter Design from Prototype</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">General Filter Design from Prototype</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/09-transmission-line-filters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Transmission Line Filters, Coupled Line Filters, Cavity Coupled Filters</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Transmission Line Filters, Coupled Line Filters, Cavity Coupled Filters</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/10-microwave-devices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Active and Passive Microwave Semiconductor Devices</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to Active and Passive Microwave Semiconductor Devices</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -222,9 +210,9 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#series-and-parallel-rlc-resonators" id="toc-series-and-parallel-rlc-resonators" class="nav-link active" data-scroll-target="#series-and-parallel-rlc-resonators"><span class="header-section-number">7.1</span> Series and Parallel RLC Resonators</a></li>
-  <li><a href="#cavity-electromagnetic-bulk-resonator" id="toc-cavity-electromagnetic-bulk-resonator" class="nav-link" data-scroll-target="#cavity-electromagnetic-bulk-resonator"><span class="header-section-number">7.2</span> Cavity — Electromagnetic Bulk Resonator</a></li>
-  <li><a href="#field-analysis" id="toc-field-analysis" class="nav-link" data-scroll-target="#field-analysis"><span class="header-section-number">7.3</span> Field Analysis</a></li>
+  <li><a href="#series-and-parallel-rlc-resonators" id="toc-series-and-parallel-rlc-resonators" class="nav-link active" data-scroll-target="#series-and-parallel-rlc-resonators"><span class="header-section-number">5.1</span> Series and Parallel RLC Resonators</a></li>
+  <li><a href="#cavity-electromagnetic-bulk-resonator" id="toc-cavity-electromagnetic-bulk-resonator" class="nav-link" data-scroll-target="#cavity-electromagnetic-bulk-resonator"><span class="header-section-number">5.2</span> Cavity — Electromagnetic Bulk Resonator</a></li>
+  <li><a href="#field-analysis" id="toc-field-analysis" class="nav-link" data-scroll-target="#field-analysis"><span class="header-section-number">5.3</span> Field Analysis</a></li>
   </ul>
 </nav>
     </div>
@@ -233,7 +221,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Cavities</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cavities</span></h1>
 </div>
 
 
@@ -251,8 +239,8 @@ window.Quarto = {
 
 
 <p>In certain cases high field selectivity is required. Various types of resonators can be used for this purpose.</p>
-<section id="series-and-parallel-rlc-resonators" class="level2 page-columns page-full" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="series-and-parallel-rlc-resonators"><span class="header-section-number">7.1</span> Series and Parallel RLC Resonators</h2>
+<section id="series-and-parallel-rlc-resonators" class="level2 page-columns page-full" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="series-and-parallel-rlc-resonators"><span class="header-section-number">5.1</span> Series and Parallel RLC Resonators</h2>
 <p>A series RLC resonator has impedance <span class="math inline">\(Z_{in} = R + j\omega L + \frac{1}{j\omega C}\)</span>. <span class="math inline">\(LC\)</span> determines <span class="math inline">\(\omega_0\)</span>, <span class="math inline">\(R\)</span> determines the dissipation factor.</p>
 <div class="quarto-layout-panel" data-layout="[30,70]">
 <div class="quarto-layout-row">
@@ -263,15 +251,15 @@ window.Quarto = {
 <img src="../images/series-rlc.svg" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-series-rlc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.1: Series RLC resonator.
+Figure&nbsp;5.1: Series RLC resonator.
 </figcaption>
 </figure>
 </div>
 </div>
 <div class="content quarto-layout-cell" style="flex-basis: 70.0%;justify-content: flex-start;">
-<p><span id="eq-series-zin"><span class="math display">\[Z_{in} \big|_{\omega_0} \in \mathbb{R} \tag{7.1}\]</span></span></p>
+<p><span id="eq-series-zin"><span class="math display">\[Z_{in} \big|_{\omega_0} \in \mathbb{R} \tag{5.1}\]</span></span></p>
 <p>At resonance, <span class="math inline">\(W_m\)</span> and <span class="math inline">\(W_e\)</span> will be equal and resonate between one form and the other:</p>
-<p><span id="eq-series-resonance"><span class="math display">\[\omega_0^2 = \frac{1}{LC} \tag{7.2}\]</span></span></p>
+<p><span id="eq-series-resonance"><span class="math display">\[\omega_0^2 = \frac{1}{LC} \tag{5.2}\]</span></span></p>
 <p><span class="math display">\[W_m = \frac{1}{2} L \bar{I}^2, \qquad W_e = \frac{1}{2} C V^2\]</span></p>
 </div>
 </div>
@@ -283,7 +271,7 @@ Figure&nbsp;7.1: Series RLC resonator.
 <img src="../images/parallel-rlc.svg" class="img-fluid figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-parallel-rlc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.2: Parallel RLC resonator.
+Figure&nbsp;5.2: Parallel RLC resonator.
 </figcaption>
 </figure>
 </div>
@@ -292,8 +280,8 @@ Figure&nbsp;7.2: Parallel RLC resonator.
 <div class="no-row-height column-margin column-container"><div class="">
 <p><span class="math inline">\(R\)</span> (or <span class="math inline">\(G\)</span>) determines bandwidth; <span class="math inline">\(L\)</span> and <span class="math inline">\(C\)</span> set <span class="math inline">\(\omega_0\)</span>. Real components have parasitic resistance, so <span class="math inline">\(Q\)</span> is always finite.</p>
 </div></div></section>
-<section id="cavity-electromagnetic-bulk-resonator" class="level2 page-columns page-full" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="cavity-electromagnetic-bulk-resonator"><span class="header-section-number">7.2</span> Cavity — Electromagnetic Bulk Resonator</h2>
+<section id="cavity-electromagnetic-bulk-resonator" class="level2 page-columns page-full" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="cavity-electromagnetic-bulk-resonator"><span class="header-section-number">5.2</span> Cavity — Electromagnetic Bulk Resonator</h2>
 <p>A <strong>cavity</strong> is an electromagnetic bulk resonator. e.g.&nbsp;a section of WR-90, PEC terminated at both ends — all faces of the prism are PEC.</p>
 <div id="fig-rect-cavity" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -301,7 +289,7 @@ Figure&nbsp;7.2: Parallel RLC resonator.
 <img src="../images/rectangular-cavity.svg" class="img-fluid figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rect-cavity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.3: Rectangular cavity with dimensions <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(d\)</span> and <span class="math inline">\(\text{TE}_{10p}\)</span> standing wave.
+Figure&nbsp;5.3: Rectangular cavity with dimensions <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(d\)</span> and <span class="math inline">\(\text{TE}_{10p}\)</span> standing wave.
 </figcaption>
 </figure>
 </div>
@@ -321,7 +309,7 @@ Figure&nbsp;7.3: Rectangular cavity with dimensions <span class="math inline">\(
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span id="eq-qfactor"><span class="math display">\[Q = \frac{W_s}{P_d} \cdot \omega_0 = \frac{\omega_0}{\Delta\omega} \tag{7.3}\]</span></span></p>
+<p><span id="eq-qfactor"><span class="math display">\[Q = \frac{W_s}{P_d} \cdot \omega_0 = \frac{\omega_0}{\Delta\omega} \tag{5.3}\]</span></span></p>
 </div>
 </div>
 <p>e.g.&nbsp;<strong>cavity wavemeter</strong> (cylindrical waveguide) — <span class="math inline">\(d\)</span> is tunable.</p>
@@ -330,14 +318,14 @@ Figure&nbsp;7.3: Rectangular cavity with dimensions <span class="math inline">\(
 <div class="no-row-height column-margin column-container"><div class="">
 <p>DROs are widely used in oscillator circuits due to their high <span class="math inline">\(Q\)</span>, small size, and temperature stability.</p>
 </div></div></section>
-<section id="field-analysis" class="level2 page-columns page-full" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="field-analysis"><span class="header-section-number">7.3</span> Field Analysis</h2>
-<p>We will consider a PEC wall RWG. Nevertheless this analysis method is applicable to any type. Consider a WG section with cross section dimensions <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> (see <a href="#fig-rect-cavity" class="quarto-xref">Figure&nbsp;<span>7.3</span></a>).</p>
+<section id="field-analysis" class="level2 page-columns page-full" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="field-analysis"><span class="header-section-number">5.3</span> Field Analysis</h2>
+<p>We will consider a PEC wall RWG. Nevertheless this analysis method is applicable to any type. Consider a WG section with cross section dimensions <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> (see <a href="#fig-rect-cavity" class="quarto-xref">Figure&nbsp;<span>5.3</span></a>).</p>
 <p>For <span class="math inline">\(\text{TE}_{nm}\)</span> modes, the fields are:</p>
-<p><span id="eq-Hz"><span class="math display">\[H_{z,nm} = A_{nm} \cos\!\left(\frac{n\pi}{a}x\right)\cos\!\left(\frac{m\pi}{b}y\right) e^{\mp j\beta_{nm} z} \tag{7.4}\]</span></span></p>
+<p><span id="eq-Hz"><span class="math display">\[H_{z,nm} = A_{nm} \cos\!\left(\frac{n\pi}{a}x\right)\cos\!\left(\frac{m\pi}{b}y\right) e^{\mp j\beta_{nm} z} \tag{5.4}\]</span></span></p>
 <p>where <span class="math inline">\(+z\)</span> is forward propagation and <span class="math inline">\(-z\)</span> is backward propagation.</p>
-<p><span id="eq-Hx"><span class="math display">\[H_{x,nm} = \mp j\,\frac{\beta_{nm}}{k_{c_{nm}}^2}\cdot A_{nm}\frac{n\pi}{a}\sin\!\left(\frac{n\pi}{a}x\right)\cos\!\left(\frac{m\pi}{b}y\right)e^{\mp j\beta_{nm}z} \tag{7.5}\]</span></span></p>
-<p><span id="eq-Hy"><span class="math display">\[H_{y,nm} = \mp j\,\frac{\beta_{nm}}{k_{c_{nm}}^2}\cdot A_{nm}\frac{m\pi}{b}\cos\!\left(\frac{n\pi}{a}x\right)\sin\!\left(\frac{m\pi}{b}y\right)e^{\mp j\beta_{nm}z} \tag{7.6}\]</span></span></p>
+<p><span id="eq-Hx"><span class="math display">\[H_{x,nm} = \mp j\,\frac{\beta_{nm}}{k_{c_{nm}}^2}\cdot A_{nm}\frac{n\pi}{a}\sin\!\left(\frac{n\pi}{a}x\right)\cos\!\left(\frac{m\pi}{b}y\right)e^{\mp j\beta_{nm}z} \tag{5.5}\]</span></span></p>
+<p><span id="eq-Hy"><span class="math display">\[H_{y,nm} = \mp j\,\frac{\beta_{nm}}{k_{c_{nm}}^2}\cdot A_{nm}\frac{m\pi}{b}\cos\!\left(\frac{n\pi}{a}x\right)\sin\!\left(\frac{m\pi}{b}y\right)e^{\mp j\beta_{nm}z} \tag{5.6}\]</span></span></p>
 <p>The dominant mode is <span class="math inline">\(\text{TE}_{10}\)</span>:</p>
 <p><span class="math display">\[H_{z,10} = A_{10}\cos\!\left(\frac{\pi}{a}x\right)e^{\mp j\beta_{10}z}\]</span></p>
 <p>In the cavity there will be <span class="math inline">\(+\)</span> and <span class="math inline">\(-\)</span> propagating waves:</p>
@@ -366,7 +354,7 @@ Figure&nbsp;7.3: Rectangular cavity with dimensions <span class="math inline">\(
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span id="eq-resonance-cond"><span class="math display">\[d = p\,\frac{\lambda_g}{2}, \quad p = 1,2,3,\ldots \tag{7.7}\]</span></span></p>
+<p><span id="eq-resonance-cond"><span class="math display">\[d = p\,\frac{\lambda_g}{2}, \quad p = 1,2,3,\ldots \tag{5.7}\]</span></span></p>
 </div>
 </div>
 <p>From the dispersion relation <span class="math inline">\(\beta^2 = k^2 - k_c^2\)</span>:</p>
@@ -382,7 +370,7 @@ Figure&nbsp;7.3: Rectangular cavity with dimensions <span class="math inline">\(
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span id="eq-resonant-freq"><span class="math display">\[\omega_0^2\mu_0\varepsilon_0 = \left(\frac{n\pi}{a}\right)^2 + \left(\frac{m\pi}{b}\right)^2 + \left(\frac{p\pi}{d}\right)^2 \quad \Rightarrow \quad \omega_{nmp} \tag{7.8}\]</span></span></p>
+<p><span id="eq-resonant-freq"><span class="math display">\[\omega_0^2\mu_0\varepsilon_0 = \left(\frac{n\pi}{a}\right)^2 + \left(\frac{m\pi}{b}\right)^2 + \left(\frac{p\pi}{d}\right)^2 \quad \Rightarrow \quad \omega_{nmp} \tag{5.8}\]</span></span></p>
 </div>
 </div>
 <p>Convention: <span class="math inline">\(d &gt; a &gt; b\)</span>, so <span class="math inline">\(\text{TE}_{101}\)</span> is the dominant mode — the lowest resonant frequency for a PEC RWG cavity.</p>
@@ -395,11 +383,11 @@ Figure&nbsp;7.3: Rectangular cavity with dimensions <span class="math inline">\(
 <img src="../images/cavity-spectrum.svg" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spectrum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.4: Discrete resonant frequencies of a rectangular cavity.
+Figure&nbsp;5.4: Discrete resonant frequencies of a rectangular cavity.
 </figcaption>
 </figure>
 </div>
-<p>As seen in <a href="#fig-spectrum" class="quarto-xref">Figure&nbsp;<span>7.4</span></a>, <span class="math inline">\(\omega_{101}\)</span> is the lowest resonant frequency, with higher-order modes <span class="math inline">\(\omega_{nmp}\)</span> following at discrete intervals.</p>
+<p>As seen in <a href="#fig-spectrum" class="quarto-xref">Figure&nbsp;<span>5.4</span></a>, <span class="math inline">\(\omega_{101}\)</span> is the lowest resonant frequency, with higher-order modes <span class="math inline">\(\omega_{nmp}\)</span> following at discrete intervals.</p>
 <blockquote class="blockquote">
 <p>Swapping <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(d\)</span> changes nothing physically — only the labelling of modes.</p>
 </blockquote>
@@ -810,13 +798,13 @@ Figure&nbsp;7.4: Discrete resonant frequencies of a rectangular cavity.
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/06-tapered-lines.html" class="pagination-link" aria-label="Tapered Transmission Lines">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tapered Transmission Lines</span></span>
+      <a href="../chapters/04-broadband-matching.html" class="pagination-link" aria-label="Broadband Matching">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Broadband Matching</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/08-filter-design.html" class="pagination-link" aria-label="General Filter Design from Prototype">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">General Filter Design from Prototype</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">General Filter Design from Prototype</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
